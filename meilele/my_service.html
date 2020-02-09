@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/iconfont.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/my_meilele.css">
+    <title>Document</title>
+</head>
+<style>
+.td1 {
+    width: 0.5% !important;
+    vertical-align: bottom;
+    width:45px;
+}
+.td2 {
+    width: 1% !important;
+    vertical-align: bottom;
+    width:49px;
+}
+.td3 {
+    width: 10% !important;
+    vertical-align: bottom;
+}
+.td4 {
+    width: 0.5% !important;
+    vertical-align: bottom;
+}
+.footer {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    z-index:9;
+}
+.w {
+    height:49px;
+}
+.td1 span {
+    display:inline-block;
+    width:28px;
+    height:29px;
+    overflow:hidden;
+    margin-bottom:4px;
+    margin-left:15px;
+    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA7CAMAAAAZzLmCAAAAhFBMVEUAAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgID///+AgIBmZma3t7eMjIzm5ubBwcGjo6Pu7u7U1NT39/eYmJh0dHTd3d2tra3Ly8vW1taTk5OHh4f5+fn19fXw8PDHx8eCgoKBOoUPAAAAFHRSTlMAbgbQ88cc+suwf0oW3MOklDwtDS42B00AAALqSURBVEjHnZbZYtsgEEWVxmm6r8xl2JGUdP3//+sAwWoqS6lyHixkcxAzIDzDMLy4ujnRAU43Vy8G4eU1Heb6pTzvmu7vojpAvLun6xfDFd1X7ZB6T1fDDd2pw9zRzXBL8bgY6XYg6jfGt4Yxl7qaR+MTLaKFq1cPUp2ke0vDHhBHlO+sEwjshHlL9MaMyEaI1cxIymFBr0TvLZI1Syfb4s0w3ggOug63El22IEyamQHm3EMaR6Vma22Ck895HWMiC0e5x+hEPEPo0FqkIk6Q8eMiGsHLbzkEhymEvBYjkoihBG8WkQBw6fWwHLQWDSYRY4gSFbiLiamK0JqRtMYFkWYRlSaiDBABObUBeT9GoYpY4LM4SnSQGG0Yt8Qo2SBxala6KCRkWMa4t+UMckJQwln0DKdhZ2DeERO0uHERo81INatihk0xFGkCq0JLMWN6WI45j1uiaZuUkfomh/Xh/Fr5ranOaPP1BDZyyXCMFIz3ox29l9zFi6JtXjNhVCqJZvzNZTGyPR8VSZeYSr8wJe6k1VTbmfMvUW3QxfN5tMaPT4oaWvq5ThNGoGTJdOKWaNCxquLAZXk6YVskX0hdjCQtx418QZxtQrKjAXSBqjiyUwGT6vAFkVDQj6ca6h5Xu6LWDNZhmWoXO13cTo4r0CJqaugnxM4iorEjTtor34mLOMnttC1OABItuLOoy7AbYtQEYJpIyMAB8SEKPxtlpVF5WhR0qFEEaBFdO+W6mOq/zn5WNayIBV5ldVckOBHJOae7GHQj7IkjgLnH+L87p8TI0IQMZ6L3Zi3SBTERYC0oGsID8ZEYM2fAr8QJYO8pSI9Ru/ICun+eyEC2qovnykrmtj6d+gHWe8TepNOza7lnV4+tXv1+RPte69X/qZD5Vxs4/F0h15r81Yn2+WZ/iOipcnrVavKneftBVP1TqW/0bjjG59dEvyfj6O1wlC8fb+Wx9GY4zstPkonXw3N49+b0fngeX5d8/gFiGP9q7ZXWiwAAAABJRU5ErkJggg==") center center no-repeat;
+    background-size:cover;
+}
+.td2 a {
+display:inline-block;
+margin-left:10px;
+margin-bottom:6px;
+width:24px;
+height:24px;
+background:url("data:image/png;base64,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");
+background-size:100% 100%;
+}
+.td3 div {
+    min-height:16px;
+    line-height:16px;
+    padding:8px 10px;
+    color:#999;
+    width:95%;
+    margin:7px 7px 8px 0;
+    border:1px solid #b7b7b7;
+    border-radius:5px;
+    height: 32px;
+}
+.td4 {
+    width:75px;
+    vertical-align:bottom;
+}
+#chat_send_button {
+    display:inline-block;
+    width:64px;
+    height:32px;
+    border:1px solid #b7b7b7;
+    border-radius:5px;
+    margin-bottom:8px;
+    text-align:center;
+    color:#333;
+    line-height:32px;
+}
+</style>
+<body>
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!-- 顶部导航--始 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-pull-left layout-back" href="javascript:void(0);" id="aaa"></a>
+                <h1 class="mui-title">美乐乐客服</h1>
+            </header>
+        </div>
+    </div>
+     <!-- 尾页 -->
+     <div class="footer">
+            <div class="send_box">
+                <table class="w">
+                    <tbody>
+                        <tr>
+                            <td class="td1">
+                                <span></span>
+                            </td>
+                            <td class="td2">
+                                <a href="javascript:void(0);"></a>
+                            </td>
+                            <td class="td3">
+                                <div id="chat_textarea"></div>
+                            </td>
+                            <td class="td4">
+                                <span id="chat_send_button">发送</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Public.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/register.css">
+    <link rel="stylesheet" href="style/mui.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mine">
+        <div class="back back1">
+            <div>
+                <a href="login.html">
+                   <i class="layout-back"></i>
+                </a>
+            </div>
+            <p class="user-title">注册</p>
+            <p style="width: 60px;">&nbsp;</p>
+        </div>
+        <form action="./php/register.php" method="POST" class="register register1">
+            <ul class="phone-login">
+                <li>
+                    <i class="user-icon phone-icon"></i>
+                    <input type="text" name="phone" class="input phone" placeholder="请输入手机号">
+                    <i class="user-del del-icon"></i>
+                </li>
+                <li>
+                    <i class="user-icon captcha-icon"></i>
+                    <input type="text" class="input ver-code" placeholder="请输入验证码">
+                    <i class="user-del del-icon1"></i>
+                    <div class="captcha">
+                        <div id="code_img"></div>
+                    </div>
+                </li>
+                <li>
+                    <i class="user-icon note-icon"></i>
+                    <input type="text" class="input phone-code" placeholder="请输入短信验证码">
+                    <i class="user-del del-icon2"></i>
+                    <div class="captcha">
+                        <p class="note">获取短信验证码</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="user-icon password-icon"></i>
+                    <input type="text" name="password" class="input password" placeholder="请设置登录密码">
+                    <i class="user-del del-icon3"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="login-options">
+            <button class="login-button">立即注册</button>
+        </div>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Vcode.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

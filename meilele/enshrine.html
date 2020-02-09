@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/iconfont.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/my_meilele.css">
+    <title>Document</title>
+</head>
+<style>
+    .empty {
+        color: #666;
+        font-size: 0.65rem;
+        margin-top: 0.6rem;
+        margin-right: 0.4rem;
+    }
+    .mui-slider {
+        width: 100%;
+        top: 2.05rem;
+        background: #fff;
+    }
+    .mui-slider-indicator.mui-segmented-control {
+        height: 2.3rem;
+        border-top: 1px solid #d8d8d8;
+    }
+    .mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+        width: 33.33%;
+        height: 2.3rem;
+        font-size: 0.7rem;
+        line-height: 2.3rem;
+    }
+    .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+        border-top: 1px solid #c8c7cc;
+        border-bottom: 1px solid #efeff4;
+    }
+    .mui-ios .mui-table-view-cell {
+        height: 22rem;
+        background: #efeff4;
+    }
+    .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+        color: #da0000;
+        border-bottom: 3px solid #da0000 !important;
+        background: 0 0;
+    }
+    .mui-table-view-cell .viewport .no-bouns img {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
+    .no-bouns {
+        padding: 5rem 0;
+        margin: auto;
+        text-align: center;
+    }
+    .mui-table-view-cell .viewport .no-bouns h4 {
+        color: #999;
+        margin-top: 1rem;
+        font-size: 0.75rem;
+    }
+</style>
+<body>
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!-- 顶部导航--始 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-pull-left layout-back" href="javascript:void(0);" id="aaa"></a>
+                <a id="menu" class="mui-action-menu mui-pull-right layout-nav" href="#topPopover"></a>
+                <h1 class="mui-title">收藏商品</h1>
+                <div id="topPopover" class="mui-popover">
+                    <div class="arrows"></div>
+                    <ul class="nav-list">
+                        <li class="list_index">
+                            <a href="meilele-index.html">
+                                <em></em>
+                                商城首页
+                            </a>
+                        </li>
+                        <li class="list_category">
+                            <a href="sort.html">
+                                <em></em>
+                                分类搜索
+                            </a>
+                        </li>
+                        <li class="list_user">
+                            <a href="my_meilele.html">
+                                <em></em>
+                                个人中心
+                            </a>
+                        </li>
+                        <li class="list_expr">
+                            <a href="experience.html">
+                                <em></em>
+                                体验馆
+                            </a>
+                        </li>
+                        <li class="list_chat">
+                            <a href="javascript:void(0);" class="last">
+                                <em></em>
+                                咨询客服
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <!-- 中间内容 -->
+            <div id="slider" class="mui-slider">
+                <div class="mui-slider-group">
+                    <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell">
+                                <div class="viewport">
+                                    <div class="no-bouns">
+                                        <img src="https://image.meilele.com/wap/images/nodata/nodata_02.png">
+                                        <h4>您还没有收藏商品</h4>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 尾页 -->
+    <div class="menu">
+        <a href="meilele-index.html" class="subMenu text-center">
+            <i class="iconfont icon-men"></i>
+            <div class="menu_name">首页</div>
+        </a>
+        <a href="sort.html" class="subMenu text-center">
+            <i class="iconfont icon-guizi"></i>
+            <div class="menu_name">分类</div>
+        </a>
+        <a href="shopping-car.html" class="subMenu text-center">
+            <i class="iconfont icon-gouwuche"></i>
+            <div class="menu_name">购物车</div>
+        </a>
+        <a href="my_meilele.html" class="subMenu text-center active">
+            <i class="iconfont icon-xiaolian"></i>
+            <div class="menu_name">我的</div>
+        </a>
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Public.js"></script>
+</body>
+</html>

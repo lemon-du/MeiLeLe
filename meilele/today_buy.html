@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/animate.min.css">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/mui.picker.min.css">
+    <link rel="stylesheet" href="style/swiper.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        height: 100%;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        background-color: #f5f5f5;
+        font-size: 13px;
+        color: #666;
+        font-family: PingFangSC-Light, 'Helvetica Neue', Helvetica, sans-serif;
+    }
+    a {
+        color: #333;
+        text-decoration: none;
+        outline: 0;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    ul li {
+        list-style: none;
+
+
+    }
+   
+    .mob-header {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        height: 1.85rem;
+        overflow: hidden;
+        background: #fff;
+        text-align: center;
+        padding: .35rem .5rem .35rem .75rem
+    }
+
+    .mob-header .header-left-icon {
+        position: absolute;
+        top: 50%;
+        left: .75rem;
+        width: .875rem;
+        height: .975rem;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background: url(img/head_nav.png) no-repeat 0 0;
+        background-size: contain
+    }
+
+    .PF-Regular {
+        font-family: PingFangSC-Regular;
+    }
+
+    .mob-header {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        height: 1.85rem;
+        overflow: hidden;
+        background: #fff;
+        text-align: center;
+        padding: .35rem .5rem .35rem .75rem;
+    }
+
+    .mob-header-wrap {
+        width: 100%;
+        z-index: 3;
+        background-color: #fff;
+    }
+
+    .mob-header .title {
+        font-size: .8rem;
+        color: #333;
+        line-height: 1.15rem
+    }
+
+    .mob-header .search-cart {
+        position: absolute;
+        top: 50%;
+        right: .6rem;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .mob-header .search-cart a {
+        display: inline-block;
+        vertical-align: middle
+    }
+
+    .mob-header .search-cart .search {
+        width: 1.15rem;
+        height: 1.15rem;
+        margin-right: .65rem;
+        background: url(img/search.png) no-repeat 0 0;
+        background-size: contain
+    }
+
+    .mob-header .search-cart .cart {
+        width: 1.15rem;
+        height: 1.15rem;
+        background: url(img/cart.png) no-repeat 0 0;
+        background-size: contain
+    }
+
+    .mob-header-nav {
+        clear: both;
+        border-top: 1px solid #eee;
+        background-color: #fff;
+    }
+
+    .mui-scroll {
+        border-top: 1px solid #eee !important;
+        background-color: #fff !important;
+    }
+
+
+    .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+        color: #000 !important;
+        border-bottom: 2px solid #000 !important;
+        background: 0 0;
+        line-height: 1.575rem !important;
+        font-size: .6rem !important;
+    }
+
+    .mui-segmented-control .mui-control-item {
+        line-height: 35px !important;
+        font-size: .7rem !important;
+    }
+    
+    .viewport {
+        width: 100%;
+        /* min-width: 320px;
+        max-width: 640px; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .today-buy {
+        margin-bottom: .25rem;
+        background-color: #fff;
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .common-bg-title {
+        height: 2.15rem;
+        text-align: center;
+    }
+
+    .common-bg-title span {
+        position: relative;
+        display: inline-block;
+        height: 2.15rem;
+        line-height: 2.15rem;
+        font-size: .7rem;
+        font-weight: 700;
+        color: #000;
+    }
+
+    .common-bg-title span::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -.75rem;
+        width: .525rem;
+        height: 2.15rem;
+        background: url(img/bule_icon.png) no-repeat center;
+        background-size: .525rem;
+    }
+    .mui-scroll-wrapper{
+        position: fixed;
+    }
+    .common-bg-title span::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -1.2rem;
+        width: 1.125rem;
+        height: 2.15rem;
+        background: url(img/yellow_icon.png) no-repeat center;
+        background-size: 1.125rem .725rem;
+    }
+
+    .today-buy .today-goods-content {
+        padding-bottom: .75rem !important;
+        height: 414px;
+    }
+
+    .today-buy .today-goods-item:first-child {
+        margin-left: .75rem !important;
+    }
+
+    .today-buy .today-goods-item {
+        width: 6.25rem !important;
+        margin-right: .5rem !important;
+    }
+
+    .today-buy .today-goods-item .goods-img {
+        width: 6.25rem !important;
+        height: 6.25rem !important;
+        margin-bottom: .4rem !important;
+    }
+
+    .goods-img img {
+        display: block !important;
+        width: 6.25rem !important;
+
+    }
+
+    .mui-segmented-control.mui-scroll-wrapper .mui-scroll {
+        width: auto;
+        border-top: 0 !important;
+        height: 0px !important;
+        white-space: nowrap;
+    }
+
+    .today-buy .today-goods-item .goods-title {
+        width: 88%;
+        height: .6rem !important;
+        padding: 0 .25rem !important;
+        margin-bottom: .2rem !important;
+        line-height: .65rem !important;
+        font-size: .6rem !important;
+        font-weight: 400 !important;
+        overflow: hidden !important
+    }
+
+    .today-buy .today-goods-item .goods-title a {
+        display: inline-block !important;
+        color: #333 !important;
+    }
+
+    .today-buy .today-goods-item .goods-price {
+        position: absolute;
+        padding: 0 .25rem !important;
+        font-size: .6rem !important;
+        color: #c81c28 !important;
+    }
+
+    .today-buy .today-goods-item .goods-tag span {
+        display: inline-block !important;
+        height: .65rem !important;
+        padding: .1rem .25rem !important;
+        -webkit-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+        border-radius: .05rem !important;
+        margin-right: .25rem !important;
+        margin-bottom: .1rem !important;
+        line-height: .45rem !important;
+        font-size: .45rem !important;
+        color: #fff !important;
+        position: relative;
+        right: 1.85rem;
+        background-color: #ff7a6a !important;
+    }
+
+    .goods-Ntag {
+        display: inline-block !important;
+        height: .65rem !important;
+        padding: .1rem .25rem !important;
+        -webkit-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+        border-radius: .05rem !important;
+        margin-right: .25rem !important;
+        margin-bottom: .1rem !important;
+        line-height: .45rem !important;
+        font-size: .45rem !important;
+        color: #fff !important;
+        position: relative;
+        right: 1.85rem;
+    }
+
+    .today-buy .today-goods-item .goods-tag {
+        padding: 0 .25rem;
+        margin-bottom: .2rem;
+    }
+
+    .floor-module {
+        margin-bottom: .25rem;
+        height: 45.2rem;
+        background-color: #fff;
+    }
+
+    .floor-module .big-img img {
+        width: 100%;
+    }
+
+    .floor-module .recommend-goods {
+        width: 15rem !important;
+        padding: .375rem 0 .65rem !important;
+        margin: 0 auto !important;
+        box-sizing: border-box;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    }
+
+    .swiper-container {
+        bottom: 3.5rem !important;
+    }
+
+    .floor-module .recommend-goods .recommend-goods-list {
+        width: 100%;
+    }
+
+    .floor-module .recommend-goods .recommend-goods-item:first-child {
+        margin-left: .375rem;
+    }
+
+    .floor-module .recommend-goods .recommend-goods-item {
+        width: 4.5rem;
+        margin-right: .375rem;
+    }
+
+    .floor-module .recommend-goods .recommend-goods-item .goods-Fimg {
+        position: relative;
+        width: 4.5rem;
+        height: 4.5rem;
+        margin-bottom: .4rem;
+    }
+
+    .floor-module .recommend-goods .recommend-goods-item .goods-Fimg img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+   .goods-title {
+        height: .6rem;
+        padding: 0 .25rem;
+        margin-bottom: .2rem;
+        line-height: .65rem;
+        font-size: .6rem;
+        font-weight: 400;
+        overflow: hidden !important;
+    }
+    
+    .floor-module .recommend-goods .recommend-goods-item .goods-title a {
+        color: #333;
+    }
+
+    .goods-price {
+        padding: 0 .25rem;
+        font-size: .6rem;
+        color: #c81c28;
+    }
+    .floor-module .floor-module-goods {
+        position: relative;
+        bottom: 3.5rem !important;
+        padding: .375rem .75rem 0;
+        z-index: 2;
+        background-color: #fff;
+    }
+    .floor-module .floor-module-goods .floor-module-goods-list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .floor-module .floor-module-goods .floor-module-goods-item {
+        width: 7rem;
+        margin-bottom: .875rem;
+    }
+    .floor-module .floor-module-goods .floor-module-goods-item .goods-img {
+        width: 7rem;
+        height: 7rem;
+        margin-bottom: .5rem;
+    }
+    .floor-module .floor-module-goods .floor-module-goods-item .goods-img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .floor-module .floor-module-goods .floor-module-goods-item .goods-tag {
+        padding: 0 .25rem;
+        margin-bottom: .2rem;
+    }
+    .floor-module .floor-module-goods .floor-module-goods-item .goods-tag span {
+        display: inline-block;
+        height: .65rem;
+        padding: .1rem .25rem;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: .05rem;
+        margin-right: .25rem;
+        margin-bottom: .1rem;
+        line-height: .45rem;
+        font-size: .45rem;
+        color: #fff;
+        background-color: #ff7a6a;
+    }
+    .sem_bottom_send_sms {
+        width: 16rem;
+        padding-bottom: 1rem;
+        margin-top: -.25rem;
+        background-color: #e62d19;
+    }
+    .sem_bottom_send_sms .send_sms_phone {
+        width: 14.5rem;
+        margin: 0 auto .5rem;
+    }
+    .sem_bottom_send_sms .send_sms_phone .phone_num {
+        width: 14.5rem;
+        height: 1.75rem;
+        padding: .5rem .75rem;
+        border: none;
+        border-radius: .25rem;
+        box-sizing: border-box;
+        line-height: 1.75rem;
+        text-align: center;
+        font-size: .7rem;
+        color: #666;
+    }
+    .sem_bottom_send_sms .send_sms_img {
+        width: 16rem;
+        margin-bottom: 1rem;
+    }
+    .sem_bottom_send_sms .send_sms_img img {
+        display: block;
+        width: 16rem;
+        height: .75rem;
+    }
+    .sem_bottom_send_sms .send_sms_submit {
+        display: block;
+        width: 14.5rem;
+        height: 1.75rem;
+        margin: 0 auto;
+        border: none;
+        border-radius: .25rem;
+        outline: 0;
+        line-height: 1.75rem;
+        text-align: center;
+        font-size: .7rem;
+        font-weight: 700;
+        color: #e62d19;
+        background-color: #fff;
+    }
+    .mll-new-footer-q {
+        box-sizing: border-box;
+        width: 100%;
+        padding: .875rem 1.5rem .825rem 1.25rem;
+        background: #414141;
+        overflow: hidden;
+    }
+    .mll-new-footer-q .records {
+        float: left;
+    }
+    .mll-new-footer-q .records .img-btn {
+        margin-bottom: .4rem;
+    }
+    .mll-new-footer-q .records .img-btn img {
+        width: 4.15rem;
+        height: 1.1rem;
+        float: left;
+    }
+    .mll-new-footer-q .records .img-btn .btn {
+        width: 3.6rem;
+        padding: .275rem 0;
+        line-height: 1;
+        font-size: .5rem;
+        text-align: center;
+        border: .05rem solid #6d6d6d;
+        border-radius: .15rem;
+        margin: .075rem 0 0 .4rem;
+        float: left;
+    }
+    .mll-new-footer-q .records .img-btn .btn span {
+        color: #fff;
+    }
+    .clearfix:after {
+        clear: both;
+        content: "020";
+        display: block;
+        height: 0;
+        visibility: hidden;
+        line-height: 0;
+        font-size: 1px;
+    }
+    .mll-new-footer-q .records p {
+        color: #aaa;
+        font-size: .45rem;
+        line-height: 1;
+        margin-bottom: .15rem;
+    }
+    .mll-new-footer-q .qrcode {
+        float: right;
+        margin: .075rem 1rem 0 0;
+    }
+    .mll-new-footer-q .qrcode .qrcode-img img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: .15rem;
+    }
+    .mll-new-footer-q .qrcode .qrcode-text {
+        color: #aaa;
+        font-size: .55rem;
+        margin-top: .25rem;
+        line-height: 1;
+        text-align: center;
+    }
+    .sidebar-btn {
+        bottom: .75rem;
+    }
+    .sidebar-btn {
+        position: fixed;
+        right: .5rem;
+        z-index: 5;
+    }
+    .call-up.only {
+        position: fixed;
+        bottom: 5.65rem;
+        right: .5rem;
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+    .call-up {
+        display: block;
+        background: rgba(218,0,0,.8) url(img/message.png) no-repeat;
+        background-position: center center;
+        background-size: .9rem .9rem;
+        position: relative;
+        border-radius: 50%;
+    }
+    .sidebar-btn li {
+        position: relative;
+    }
+    .sidebar-btn .chat {
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-bottom: .75rem;
+        border: 1px solid #e5e5e5;
+        border-radius: 50%;
+        background: #fff url(img/message.png) no-repeat center;
+        background-size: .875rem .775rem;
+    }
+    .chat-prompt {
+        position: absolute;
+        top: .1rem;
+        display: none;
+        right: 1.95rem;
+        width: 8.95rem;
+        color: #fffefe;
+        font-size: .65rem;
+        background: url(img/message.png) no-repeat right bottom;
+        background-size: .9rem 1.5rem;
+    }
+    .sidebar-btn .back-top {
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        border: 1px solid #e5e5e5;
+        border-radius: 50%;
+        background: #fff url(img/arrow_up.png) no-repeat center;
+        background-size: 1.55rem 1.35rem;
+        visibility: hidden;
+    }
+    *{ touch-action: none; }
+</style>
+
+<body>
+    <div class="mob-header-placeholder" style="height: 88.8594px;">
+        <div class="mob-header-wrap">
+            <header class="mob-header">
+                <a href="meilele-index.html" class="header-left-icon"></a>
+                <span class="title  PF-Regular">每日特卖</span>
+                <div class="search-cart">
+                    <a href="#" class="search"></a>
+                    <a href="#" class="cart"></a>
+                </div>
+            </header>
+            <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                <div class="mui-scroll" id="ul" >
+                    <a class="mui-control-item mui-active" >
+                        今日必买
+                    </a>
+                    <a class="mui-control-item">
+                        日系简约
+                    </a>
+                    <a class="mui-control-item">
+                        轻奢主义
+                    </a>
+                    <a class="mui-control-item" >
+                        真皮家具
+                    </a>
+                    <a class="mui-control-item">
+                        小户专属
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="viewport">
+            <div class="mui-slider">
+                <!--支持循环，需要重复图片节点-->
+                    <div class="mui-slider-group mui-slider-loop">
+                    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
+                                src="https://image.meilele.com/images/201810/1539640659545709426.jpg" /></a></div>
+                    <div class="mui-slider-item"><a href="#"><img
+                                src="https://img002.mll3321.com/images/201810/1539735584317425260.jpg" /></a></div>
+                    <div class="mui-slider-item"><a href="#"><img
+                                src="https://image.meilele.com/images/201810/1539640659545709426.jpg" /></a></div>
+                    <!--支持循环，需要重复图片节点-->
+                    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
+                                src="https://img002.mll3321.com/images/201810/1539735584317425260.jpg" /></a></div>
+                </div>
+                <div class="mui-slider-indicator mui-text-right">
+                    <div class="mui-indicator mui-active"></div>
+                    <div class="mui-indicator"></div>
+                </div>
+            </div>
+                <div id="slide">
+                <div class="today-buy Not" id="m-hdjh-jrbm ">
+                    <h3 class="common-bg-title">
+                        <span>今日必买</span>
+                    </h3>
+                    <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted"
+                        style="height: 240px;">
+                        <div class="mui-scroll" style="top: 0;">
+                            <ul class="list">
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed">
+                                            <img src="https://img002.mll3321.com//images/small/143/width/250/height/250/mode/1/encrypt/3e970a763ee007b6dafc2d315234f197/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMG4v0pAXeT8pOV4r_pBv8aLW7sJHSRi31a1NLD3tuZhg==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed" type="bed">1.5米儿童床 进口实木双层床 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">3899</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed">
+                                            <img src="https://image.meilele.com//images/small/290/width/250/height/250/mode/1/encrypt/957593d007880530e372b33bd5e66a60/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOuA9t7A9dr16uOwPoIwWoKk6h8Kdy+JLPegZFrzVcDBQ==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed" type="bed">奥古曼实木双人床 1.8米实木大床</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">3599</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=chest">
+                                            <img src="https://img002.mll3321.com//images/small/308/width/250/height/250/mode/1/encrypt/acd2efc44978de0aea0e73062402d272/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMbEgqLgKs8gLcQrCb3qiP9rf+1FBxFB6y0CSqlAwGq6Q==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=chest">时尚个性 可伸缩组合地柜（地柜+活动架）不可左右互装</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807" type="bed">1857</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=chest">
+                                            <img src="https://img004.mll3321.com//images/small/151/width/250/height/250/mode/1/encrypt/f6ddc17cae09c717c83c2880d7af29c1/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMG4x5KBpx7VOsUivdZXOvv+ubvdqeSDU1HZA3pYY4YiA==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=chest" type="bed"> 经济型板式衣橱组装 纯白四门衣柜收纳储物柜 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">5760</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=chest" type="bed">
+                                            <img src="https://img003.mll3321.com//images/small/414/width/250/height/250/mode/1/encrypt/bbd9d9a0e88a2d7fe980a386dd85c430/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPApYP3VSmVXnEuEqaTEtSfVwqlAG0XCOIVVlIZdveysw==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=chest" type="bed"> 经济型板式衣橱组装 纯白四门衣柜收纳储物柜 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">3199</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=chest" type="bed">
+                                            <img src="https://img003.mll3321.com//images/small/414/width/250/height/250/mode/1/encrypt/bbd9d9a0e88a2d7fe980a386dd85c430/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPApYP3VSmVXnEuEqaTEtSfVwqlAG0XCOIVVlIZdveysw==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=chest" type="bed"> 经济型板式衣橱组装 纯白四门衣柜收纳储物柜</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">3199</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=chest" type="bed">
+                                            <img src="https://img004.mll3321.com//images/small/153/width/250/height/250/mode/1/encrypt/dd549fc53e4dceb8c8f19952db8ce6a9/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHN4zsM25yieXegn9_MdDDE5gxcDJf+Ryt1E2YF5crnCMQ==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=chest" type="bed">1.5米儿童床 进口实木双层床 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">3899</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=chest">
+                                            <img src="https://img001.mll3321.com//images/small/107/width/250/height/250/mode/1/encrypt/55296a42eec61bf923094665dfed519d/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPGyflkob3A2AZqw_k+s67o7qfdL+5bYbaOVtL97uMDQg==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=chest" type="bed">白杨木五斗柜 抽拉柜 储物柜 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">2069</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=chest" type="bed">
+                                            <img src="https://image.meilele.com//images/small/370/width/250/height/250/mode/1/encrypt/44ccadda87760667116aa32c2c75e71a/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMjvVRBx+BrlcIcE5pCjVGCZyWUjJb2mLMhheH_e020wQ==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=chest" type="bed">四门衣柜（尊贵款） 1.97米白色 实用之至 优质白哑漆涂装  </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">5999</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=hallstand">
+                                            <img src="https://img002.mll3321.com//images/small/143/width/250/height/250/mode/1/encrypt/3e970a763ee007b6dafc2d315234f197/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMG4v0pAXeT8pOV4r_pBv8aLW7sJHSRi31a1NLD3tuZhg==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed" type="bed">电视柜 唯美时尚 宽大结实面板  雅致白 通配性强 储物收纳柜 带抽电视柜  </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">1455</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed">
+                                            <img src="https://img001.mll3321.com//images/small/255/width/250/height/250/mode/1/encrypt/97f3ef36cd841aa49a932aff4f5f5627/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHN_cNq8iSWPTwoWz64WvZbAeem1nA4EocwQy3uce7OhJA==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=desk" type="bed">简约时尚 1.5米板木卧室床 仿古白色 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">3299</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=desk" type="bed">
+                                            <img src="https://image.meilele.com//images/small/347/width/250/height/250/mode/1/encrypt/1f48518eb06f490cb8d4d3f259f3d18c/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMQ2cq60UNI1F8pafqn5VMTxpVVfqYfEiOFx0RfkzDODQ==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed" type="bed">经典美式涂装  造型优美  时尚大气可伸缩餐台 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">1699</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed" type="bed">
+                                            <img src="https://img003.mll3321.com//images/small/598/width/250/height/250/mode/1/encrypt/22e57a3add9e85ee31f9b6d4552f25fe/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNOX20XaUVoZhakWN0sXtQSx7x7eVp1IX3HLntA7Rwkdg==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed" type="bed">1.8米实木床 主卧经济型婚床 原木色双人软包床</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">2099</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed">
+                                            <img src="https://image.meilele.com//images/small/902/width/250/height/250/mode/1/encrypt/2a83f8f39e0b7af4dd4b2e973997dee0/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPtrLBPtcB1KaKxvuhCyGpfaeqPEta6nMGpUcUm1AjU4A==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-tag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed" type="bed">选用奥古曼材质 时尚稳固1.5米实木床 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">3199</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=hallstand" type="bed">
+                                            <img src="https://img004.mll3321.com//images/small/245/width/250/height/250/mode/1/encrypt/e398647bb2479f7ac2eda0128d9d2903/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMLs8pGHl6MlYUXj8CiqkY3NItSi12cUd1N9ttzNK6ilA==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-tag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=hallstand" type="bed">全实木衣帽架 挂衣架 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">289</span>
+                                    </p>
+                                </li>
+                                <li class="today-goods-item" style="display: inline-block;">    
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=hallstand">
+                                            <img src="https://img001.mll3321.com//images/small/124/width/250/height/250/mode/1/encrypt/5467bbaaf0891bb3eadbc07bd736b4b3/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOddRyq1AslVJTcekO2t2E92rYyCkTGllYyNNxRJh4Oxw==.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="goods-tag">
+                                        <span>限购<span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=hallstand" type="bed">原木色全实木衣帽架</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-25807">289</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="floor-module  Not" id="m-hdjh-lc-1 ">
+                        <div class="big-img">
+                            <a href="detail.html;">
+                                <img
+                                    src="https://img004.mll3321.com//images/upload/201810/0ef1ce92f1133e2a2698200d7dc099db.jpg">
+                            </a>
+                        </div>
+                        <div class="recommend-goods swiper-container swiper-container-horizontal swiper-container-free-mode swiper-container-ios">
+                            <ul class="recommend-goods-list swiper-wrapper"
+                                style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                <li class="recommend-goods-item swiper-slide JS_price swiper-slide-active" data-id="338362">
+                                    <div class="goods-Fimg">
+                                        <a href="detail.html?id=  ">
+                                            <img
+                                                src="https://img001.mll3321.com//images/small/313/width/180/height/180/mode/1/encrypt/877b658bb4b2d8beebd938d022fba79c/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHONm1jfRzWkc_ZfDzqdQtpqBOeBoInQss01m1_QU+p72A==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=sofa" type="sofa">优质橡胶木框架 全实木布艺沙发套装（1+2+3） 简约客厅家具</a>
+                                    </h3>
+
+                                    <p class="goods-price">
+                                        ¥<span class="p1-338362">8499</span>
+                                    </p>
+                                </li>
+                                <li class="recommend-goods-item swiper-slide JS_price swiper-slide-next" data-id="340932">
+                                    <div class="goods-Fimg">
+                                        <a href="detail.html?id=bed  " type="bed">
+                                            <img
+                                                src="https://image.meilele.com//images/small/355/width/180/height/180/mode/1/encrypt/090882c197ae0b693e0c64c85021b4e1/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNjgUwJK6ojoCeZobRFruqfVD3Ny9HnTmOuj8aQZMjLMg==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed  " type="bed">KD排骨架 NC环保油漆1.8米双人床</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-340932">2369</span>
+                                    </p>
+                                </li>
+                                <li class="recommend-goods-item swiper-slide JS_price" data-id="351064">
+
+                                    <div class="goods-Fimg">
+                                        <a href="detail.html?id=chair  " type="bed">
+                                            <img
+                                                src="https://image.meilele.com//images/small/421/width/180/height/180/mode/1/encrypt/4d6737c3f4a1c07733de41e5a6b5f253/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOTEHAB9aATP72sXE_MDiwlom4QnmGhAsNOWTZkjKGELQ==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=chair " type="bed">时尚简约 优质橡胶木 板木结合 大理石桌面
+                                            小户型1.4米餐厅套装（1桌+4椅）</a>
+                                    </h3>
+
+                                    <p class="goods-price">
+                                        ¥<span class="p1-351064">3680</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                        <div class="floor-module-goods">
+                            <ul class="floor-module-goods-list">
+                                <li class="floor-module-goods-item JS_price" >
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed  ">
+                                            <img
+                                                src="http://img004.mll3321.com//images/small/175/width/280/height/280/mode/1/encrypt/01c1824b84777fe00e15252865e9455e/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOrSHcPmBUkaJKVPZB1+dyFL3KbDPy3R4If0qiKAXbHmw==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed  " type="bed">人气爆款 1.8米象牙白田园双人床 精美床头饰花公主床 排骨架床 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-15925">2899</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price" >
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=chair  " type="bed">
+                                            <img
+                                                src="http://img001.mll3321.com//images/small/138/width/280/height/280/mode/1/encrypt/ee529fc2298ea0007917770ee40fdcbf/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHP+fL9Wx8tJPdR+YXeOz6VlF16PcA+whN5otufshLm9ZQ==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=chair  " type="bed">餐桌椅 原汁原味 原色纹理全实木1.4米餐桌
+                                            混搭餐厅套装（1桌+2蓝色椅+2褐色椅）</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-285735">3800</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=sofa  " type="sofa">
+                                            <img
+                                                src="http://image.meilele.com//images/small/407/width/280/height/280/mode/1/encrypt/569fad6c4acb4d08eb48bfd9101dccdd/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOZyG1xrJRtzmwwxmAMhOAPSyIowHRcy3d0IzGFup37MA==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=sofa  " type="sofa" >优质实木框架 清爽透气棉麻布艺 全拆洗布套转角沙发
+                                            深色款（3+左贵妃）（含3个靠包，3个抱枕） </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-338934">5429</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price" >
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed  " type="bed">
+                                            <img
+                                                src="http://img003.mll3321.com//images/small/200/width/280/height/280/mode/1/encrypt/d348aa154d1d393f850ea37121b4a2d0/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPVcX4Ld3JDHuMZ9TIglJrESKu5mTeeFflwqKyl083jow==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed  " type="bed">高档典雅 复古大气 进口杨木 1.8米床板双人床</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-344015">3999</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed  ">
+                                            <img
+                                                src="http://img003.mll3321.com//images/small/304/width/280/height/280/mode/1/encrypt/1a6a05c601ae7916e9dbf1f0a5422aa0/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNqCMXMweGdCJBhX8f2+psmoj20mbs6ttgdSlW9FhslSQ==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed  " type="bed">时尚双人床 烤漆象牙白床1.8米</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-350449">5999</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price" >
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed  " type="bed">
+                                            <img
+                                                src="http://img003.mll3321.com//images/small/862/width/280/height/280/mode/1/encrypt/7d1fc59368b00558b3371662457d9a73/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPuMb9P1F9QKWZfk1Jdd0UW_HBiB4_+wWKWVH1KTyt7cA==.jpg">
+                                        </a>
+                                    </div>
+
+                                    <div class="goods-Ntag">
+                                        <span>限购</span>
+                                    </div>
+
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed  " type="bed">优质白椿木主材 时尚简约 清新唯美1.8米床</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-368100">3099</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="floor-module  Not" id="m-hdjh-lc-1">
+                        <div class="big-img">
+                            <a href="detail.html?id=  ;" type="bed">
+                                <img src="http://img002.mll3321.com//images/upload/201810/e6fba6212f0ae9e6c757d3a739a52b14.jpg">
+                            </a>
+                        </div>
+                        <div class="recommend-goods swiper-container swiper-container-horizontal swiper-container-free-mode swiper-container-ios">
+                            <ul class="recommend-goods-list swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                <li class="recommend-goods-item swiper-slide JS_price swiper-slide-active" data-id="338362">
+                                    <div class="goods-Fimg">
+                                        <a href="detail.html?id=bed  " type="bed">
+                                            <img src="http://img002.mll3321.com//images/small/383/width/180/height/180/mode/1/encrypt/fcef43ead18e863ea808c4f8610498fb/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMWOTvSuwB3QCjKw4qWM9QjnGY9YfdhHl7Isbu2LswIQw==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed  " type="bed">优质橡胶木框架  油蜡超纤皮床头靠包 1.8米双人床</a>
+                                    </h3>
+
+                                    <p class="goods-price">
+                                        ¥<span class="p1-338362">4199</span>
+                                    </p>
+                                </li>
+                                <li class="recommend-goods-item swiper-slide JS_price swiper-slide-next" data-id="340932">
+                                    <div class="goods-Fimg">
+                                        <a href="detail.html?id=hallstand  " type="bed">
+                                            <img src="http://img001.mll3321.com//images/small/771/width/180/height/180/mode/1/encrypt/ddc9058641f67bb32f1456d5ec822e22/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHM8FK_lDfduAYFQIY1+LsWAtMBg2uCjqlgLumQfyJGUWw==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=hallstand  ">精选优质实木 1.6米长餐桌 精美提花布靠背餐椅 餐厅套装（1桌+4椅）</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-340932">9695</span>
+                                    </p>
+                                </li>
+                                <li class="recommend-goods-item swiper-slide JS_price" data-id="351064">
+
+                                    <div class="goods-Fimg">
+                                        <a href="detail.html?id=sofa  ">
+                                            <img src="http://img004.mll3321.com//images/small/365/width/180/height/180/mode/1/encrypt/cee5a04c9bbd2e81af0b664ad565e6ba/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOvKlXeFeyD5+gjRUd0KIM+j1LCn6BxylSTj4bwI9DYQg==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=sofa  ">舒适除甲醛沙发 实木内架带储物功能L型皮艺右转角沙发</a>
+                                    </h3>
+
+                                    <p class="goods-price">
+                                        ¥<span class="p1-351064">6540</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                        <div class="floor-module-goods">
+                            <ul class="floor-module-goods-list">
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=hallstand  ">
+                                            <img src="http://img003.mll3321.com//images/small/251/width/280/height/280/mode/1/encrypt/265add028a9c91f3a75321fa94179337/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNj4qXzvpJeHS0pXaFYyjuYWFnZ1E+onc5kanwpmgJ2zw==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=hallstand  ">贵族之选 高档实木框架 复古描金镂空雕花1.6米餐厅豪华套装（1桌+2扶手+4无扶手） </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-15925">14350</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=sofa  ">
+                                            <img src="http://img003.mll3321.com//images/small/111/width/280/height/280/mode/1/encrypt/1dfed4ed03b5c6996eb7fc0be27ddcfa/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNtZ6O8Brnomlf5k7oUBFk2kHfwrmZyHtkrsRb9gwwrmw==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=sofa  ">豪门精品 高档优质布艺 精美实木手工雕刻工艺转角沙发（左右通用）</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-285735">8799</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed  ">
+                                            <img src="http://img002.mll3321.com//images/small/417/width/280/height/280/mode/1/encrypt/f6a6e0529cef10ca15da8d4a62af8ea3/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPKnwM_PslvTTtnTaECR8jcygv8XQbR899oBWeSjgcrFQ==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed  ">时尚臻贵 全手工雕刻 精选上等头层黄牛皮 优质桦木框架1.8米简美高柱床板床</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-338934">8199</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed  ">
+                                            <img src="http://img004.mll3321.com//images/small/170/width/280/height/280/mode/1/encrypt/36b955b8a2a2d77cbf9f4c82af77a461/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNEt4MFytW1EDHbc6zLPs+0wnkvL20agn+j8XrQPUbksA==.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="goods-Ntag">
+                                        <span>限购</span>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed  ">1.8米床 品质至上 美国进口珍稀金丝黄杨木 高档大宝油漆 做旧床板条床</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-344015">10599</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=bed  ">
+                                            <img src="http://img002.mll3321.com//images/small/121/width/280/height/280/mode/1/encrypt/d20985c973f694d34f5bb69c264d00c4/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMHhff_higaHG4MEyOmUHQnzIeMNdwJFghPvzwl94DlDQ==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=bed  ">优质松木框架 个性假抽屉床尾设计 1.8米双人床 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-350449">3799</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=  ">
+                                            <img src="http://img002.mll3321.com//images/small/278/width/280/height/280/mode/1/encrypt/4b1cc7ca8c9b98a9af0d65b13badbe51/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPXE1uJ_Np0JSsJzZXYSJV_egwGJ8kZIQOSdInzboJwDA==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=  ">仿古铜钉+拉扣 亲肤棉麻布艺沙发套装（老虎椅+1+3）【赠送的抱枕图案随机发货】</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-368100">8698</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="floor-module  Not" id="m-hdjh-lc-1 ">
+                        <div class="big-img">
+                            <a href="detail.html?id=  ;">
+                                <img src="http://img001.mll3321.com//images/upload/201901/a19c020e478cb0c714625422aa9e05a3.png">
+                            </a>
+                        </div>
+                        <div class="recommend-goods swiper-container swiper-container-horizontal swiper-container-free-mode swiper-container-ios">
+                            <ul class="recommend-goods-list swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                <li class="recommend-goods-item swiper-slide JS_price swiper-slide-active" data-id="338362">
+                                    <div class="goods-Fimg">
+                                        <a href="detail.html?id=  ">
+                                            <img src="http://image.meilele.com//images/small/337/width/180/height/180/mode/1/encrypt/7b1db33432fa1c800a70fe581e873303/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNC7B68cKF6MFagasc7RK9HUhEDl0UKef5l6RiCwNT2Ig==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=  ">名流之选 巴西进口头层黄牛皮 五档调节头枕左转角沙发（1+3+左贵妃）</a>
+                                    </h3>
+
+                                    <p class="goods-price">
+                                        ¥<span class="p1-338362">9198</span>
+                                    </p>
+                                </li>
+                                <li class="recommend-goods-item swiper-slide JS_price swiper-slide-next" data-id="340932">
+                                    <div class="goods-Fimg">
+                                        <a href="detail.html?id=  ">
+                                            <img src="http://img003.mll3321.com//images/small/199/width/180/height/180/mode/1/encrypt/28b1c2b6b2f26f885a6bab7a18a89829/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNvGNFG0W4dvAD2BG27aDXHkVN9AaTEghu0sRS4TaeebQ==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=  ">美式帝王床 头层黄牛真皮软包 1.8米精致描金雕花床 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-340932">6699</span>
+                                    </p>
+                                </li>
+                                <li class="recommend-goods-item swiper-slide JS_price" data-id="351064">
+
+                                    <div class="goods-Fimg">
+                                        <a href="detail.html?id=  ">
+                                            <img src="http://img002.mll3321.com//images/small/111/width/180/height/180/mode/1/encrypt/5a6c7d1095ceea049195f8acd7015413/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOSz7G5VTi__lxINE4CfkE8eDCK_gjm_MhNGqvmf76qAA==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=  ">尊享奢华 名匠纯手工雕花 高档头层真皮布艺结合沙发（1+2+3） </a>
+                                    </h3>
+
+                                    <p class="goods-price">
+                                        ¥<span class="p1-351064">24998</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                        <div class="floor-module-goods">
+                            <ul class="floor-module-goods-list">
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=  ">
+                                            <img src="http://img002.mll3321.com//images/small/276/width/280/height/280/mode/1/encrypt/fde24ca613256ea890ddac0fae3a6f77/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHN7JCrhMZnVyJrLxSLCzHSLuQv+yUFbHKMLLRXALzX1TQ==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=  ">人气爆款 可拆卸靠包 精选头层珠光真皮1.8米床</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-15925">3299</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=  ">
+                                            <img src="http://img004.mll3321.com//images/small/417/width/280/height/280/mode/1/encrypt/1dea932922e3d0093a200f2c9223bbbb/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMgJCUFvKx6nTSL7yZDwJizogNMfHnvm90UA0DkwISdpQ==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=  ">豪门臻品 高档头层黄牛真皮 精美绝伦手工双面实木雕花沙发套装（1+2+3） </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-285735">31527</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=  ">
+                                            <img src="http://img004.mll3321.com//images/small/139/width/280/height/280/mode/1/encrypt/d47471dc4ef383d986a081a1e2b51eb7/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHN4F3jiUmspOaL402LVhvgGOlhKQ_mpDDIrlPdJklb0KQ==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=  ">欧洲皇室御用款 桃花芯木雕花床 黄牛双色头层真皮1.8米床 </a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-338934">10899</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=  ">
+                                            <img src="http://img001.mll3321.com//images/small/187/width/280/height/280/mode/1/encrypt/e24508eec33e7774f79256c4e6ae398d/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPStr_OPoqN5z6bsHnwHRIoZs9yeTn8FXlFQoABe+rraw==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=  ">欧洲名师力荐 纯手工雕花描银点缀 涡卷型头层珠光真皮床头1.8米女王床（齐边床）</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-344015">4599</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=  ">
+                                            <img src="http://img001.mll3321.com//images/small/356/width/280/height/280/mode/1/encrypt/400474b8032cf41acf646a51b78c8a03/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOsnSjbJjSrHVBn+6mDxfwnrycC6EykOb8mfn+dS_8KPw==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=  ">全实木手工雕刻 香槟金 头层黄牛皮（1+2+3）组合沙发</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-350449">27997</span>
+                                    </p>
+                                </li>
+                                <li class="floor-module-goods-item JS_price">
+                                    <div class="goods-img">
+                                        <a href="detail.html?id=  ">
+                                            <img src="http://img003.mll3321.com//images/small/386/width/280/height/280/mode/1/encrypt/5b80faa10a73201cbf398aeecece136f/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNkMVJ3cQCwgZgraWj33rFPYSPk8vuMvG3U+k27UF+DTA==.jpg">
+                                        </a>
+                                    </div>
+                                    <h3 class="goods-title">
+                                        <a href="detail.html?id=  ">全实木手工雕刻 香槟金 头层黄牛皮1.8米双人床（可定制2.0米）</a>
+                                    </h3>
+                                    <p class="goods-price">
+                                        ¥<span class="p1-368100">10599</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="floor-module  Not" id="m-hdjh-lc-1 ">
+                    <div class="big-img">
+                        <a href="detail.html?id=  ;">
+                            <img src="http://img001.mll3321.com//images/upload/201810/d8346665d81330208f0fe689558af115.jpg">
+                        </a>
+                    </div>
+                    <div class="recommend-goods swiper-container swiper-container-horizontal swiper-container-free-mode swiper-container-ios">
+                        <ul class="recommend-goods-list swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                            <li class="recommend-goods-item swiper-slide JS_price swiper-slide-active" data-id="338362">
+                                <div class="goods-Fimg">
+                                    <a href="detail.html?id=  ">
+                                        <img src="http://img002.mll3321.com//images/small/366/width/180/height/180/mode/1/encrypt/61383bde70f288f9de1fce8627db20e1/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNvjzHlj6zI+GIFnAfZQmZZvy8yWlFGBgpvZUlyInHIbA==.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="goods-title">
+                                    <a href="detail.html?id=  ">时尚拱形床头设计 自然温馨1.8米高箱床 （无纹理）</a>
+                                </h3>
+
+                                <p class="goods-price">
+                                    ¥<span class="p1-338362">3799</span>
+                                </p>
+                            </li>
+                            <li class="recommend-goods-item swiper-slide JS_price swiper-slide-next" data-id="340932">
+                                <div class="goods-Fimg">
+                                    <a href="detail.html?id=  ">
+                                        <img src="http://img002.mll3321.com//images/small/941/width/180/height/180/mode/1/encrypt/7a3bff2ad726a6d815ce74b109150045/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHP8PhXxi0EUsbF7IY6hpWzzvTL3qXPoMOgVaRUlFK7rEA==.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="goods-title">
+                                    <a href="detail.html?id=  ">天然大理石桌面 高档橡胶木承重椅脚 小户型餐厅套装（1桌+4椅）</a>
+                                </h3>
+                                <p class="goods-price">
+                                    ¥<span class="p1-340932">3999</span>
+                                </p>
+                            </li>
+                            <li class="recommend-goods-item swiper-slide JS_price" data-id="351064">
+
+                                <div class="goods-Fimg">
+                                    <a href="detail.html?id=  ">
+                                        <img src="http://image.meilele.com//images/small/345/width/180/height/180/mode/1/encrypt/a6056311374e41523454d7fca96b8a65/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMq3ryWiI5OXMUhNHhF7JdXUBfgyRejyx83KwcHTmLW2A==.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="goods-title">
+                                    <a href="detail.html?id=  ">上等白蜡木框架舒适棉麻布艺沙发 四人位沙发套装(4人位+脚踏)</a>
+                                </h3>
+
+                                <p class="goods-price">
+                                    ¥<span class="p1-351064">10128</span>
+                                </p>
+                            </li>
+                        </ul>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                    </div>
+                    <div class="floor-module-goods">
+                        <ul class="floor-module-goods-list">
+                            <li class="floor-module-goods-item JS_price">
+                                <div class="goods-img">
+                                    <a href="detail.html?id=  ">
+                                        <img src="http://img003.mll3321.com//images/small/348/width/280/height/280/mode/1/encrypt/d8ad452cf4961818c2afae1b612a14db/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHM44SJ_NKtK_X+fY+36MHhKu5GeXDfw_V3n1MvGjXed0g==.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="goods-title">
+                                    <a href="detail.html?id=  ">1.8米象牙白田园双人床 精美床头饰花公主床 储物高箱床 </a>
+                                </h3>
+                                <p class="goods-price">
+                                    ¥<span class="p1-15925">3899</span>
+                                </p>
+                            </li>
+                            <li class="floor-module-goods-item JS_price">
+                                <div class="goods-img">
+                                    <a href="detail.html?id=  ">
+                                        <img src="http://img003.mll3321.com//images/small/503/width/280/height/280/mode/1/encrypt/25a322c0e0953a532869275457b8fdde/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHN8_ve8294hEyUPZ1VOG6WLu3gVYP1qNhC4TzTfjVEYIw==.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="goods-title">
+                                    <a href="detail.html?id=  ">至简撞色款 广西白大理石台面 五星级水曲柳臻品餐厅套装（1桌+6椅）</a>
+                                </h3>
+                                <p class="goods-price">
+                                    ¥<span class="p1-285735">5859</span>
+                                </p>
+                            </li>
+                            <li class="floor-module-goods-item JS_price">
+                                <div class="goods-img">
+                                    <a href="detail.html?id=  ">
+                                        <img src="http://img003.mll3321.com//images/small/379/width/280/height/280/mode/1/encrypt/ba00f1ac3fbc5f3058ec87d88a3b3523/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMDFHRNDI1nOVYRBfPCMNVAomBHpSj6GnPSUs21t58o9g==.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="goods-title">
+                                    <a href="detail.html?id=  ">简约时尚 实木椅架 白色钢化玻璃面板餐桌椅组合（1桌+4椅） </a>
+                                </h3>
+                                <p class="goods-price">
+                                    ¥<span class="p1-338934">4785</span>
+                                </p>
+                            </li>
+                            <li class="floor-module-goods-item JS_price">
+                                <div class="goods-img">
+                                    <a href="detail.html?id=  ">
+                                        <img src="http://image.meilele.com//images/small/196/width/280/height/280/mode/1/encrypt/e7c372d84c27262a068f867dacc81186/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOq_wtkaC4EwYIkHNR1tIis52eQ2xZtAdOBnlO+4qP5wg==.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="goods-title">
+                                    <a href="detail.html?id=  ">优质实木框架  清爽透气棉麻布艺 全拆洗布套转角沙发 浅色款（3+左贵妃）（含3个靠包，3个抱枕） </a>
+                                </h3>
+                                <p class="goods-price">
+                                    ¥<span class="p1-344015">5429</span>
+                                </p>
+                            </li>
+                            <li class="floor-module-goods-item JS_price">
+                                <div class="goods-img">
+                                    <a href="detail.html?id=  ">
+                                        <img src="http://image.meilele.com//images/small/282/width/280/height/280/mode/1/encrypt/b2fc337c967929abc30a1c8c93a1ee35/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNuNqBB2Y0ZVmq2j8b0o01LxlAucoLOS8VWZetS4xOZ6Q==.jpg">
+                                    </a>
+                                </div>
+                                <div class="goods-Ntag">
+                                    <span>限购</span>
+                                </div>
+                                <h3 class="goods-title">
+                                    <a href="detail.html?id=  ">白色简约美式床 1.8米双人床板式床家具</a>
+                                </h3>
+                                <p class="goods-price">
+                                    ¥<span class="p1-350449">1729</span>
+                                </p>
+                            </li>
+                            <li class="floor-module-goods-item JS_price">
+                                <div class="goods-img">
+                                    <a href="detail.html?id=  ">
+                                        <img src="http://img003.mll3321.com//images/small/230/width/280/height/280/mode/1/encrypt/c99a86b3c52433e17c984e76c3cc9169/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPCV916p8m19kMYcKcIlxGBUTxBcd3NLfj2BSq+6KUktA==.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="goods-title">
+                                    <a href="detail.html?id=  ">多功能收纳储物沙发床 高弹海绵填充转角沙发（2+左贵妃）</a>
+                                </h3>
+                                <p class="goods-price">
+                                    ¥<span class="p1-368100">4799</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+           </div>
+            <div class="sem_bottom_send_sms" name="sem_bottom_send_sms">
+                <div class="send_sms_img">
+                    <img src="img/ft-logo-q.png">
+                </div>
+                <div class="send_sms_phone">
+                    <input class="phone_num" type="tel" maxlength="11" placeholder="输入手机号码">
+                </div>
+                <button class="send_sms_submit">获取门店地址</button>
+            </div>
+        </div>
+        <footer class="mll-new-footer-q">
+            <div class="records">
+                <div class="img-btn clearfix">
+                    <img src="img/ft-logo-q.png">
+                    <div class="btn"><a href="detail.html"><span>电脑版</span></a></div>
+                </div>
+                <p><span style="display:inline-block;line-height:150%">深圳象限家居设计有限公司 版权所有 <br>增值电信业务经营许可证:粤B2-20180126</span></p>
+                <p><img src="https://img002.mll3321.com/images/upload/201912/7c78262978dcd03bcbd07e1bcab76b57.png" style="background:none;width:15px;height:15px;margin-top:2px"> 粤公网安备44030602000294号</p>
+            </div>
+            <div class="qrcode">
+                <div class="qrcode-img"><img src="https://static.mll3321.com/wap/common/i/ft-qrcode.png"></div>
+                <div class="qrcode-text">有赞商城</div>
+            </div>
+        </footer>
+        <ul class="sidebar-btn">
+            <li id="JS_side_call_up" style="display:none;" class="call-up only"></li>
+            <li id="J-customer-service"  style="transform-origin: 0px 0px; opacity: 1; transform: scale(1, 1);"><i class="chat" ></i><div id="JS_chat_prompt"  class="chat-prompt" ><span>年中内购会，99元预定专享特权</span></div></li>
+            <li id="JS_to_top" class="back-top"  style="visibility: visible;"></li>
+        </ul>
+    </div>
+    <script>
+        //获得slider插件对象
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval: 5000//自动轮播周期，若为0则不自动播放，默认为0；
+        });
+        (function () {
+            function change() {
+                var deviceWith = document.documentElement.getBoundingClientRect().width;
+                if (deviceWith > 750) {
+                    deviceWith = 750
+                }
+                document.documentElement.style.fontSize = deviceWith / 16 + "px";
+            }
+            var timer;
+            change();
+            window.addEventListener("resize", function () {
+                clearTimeout(timer)
+                timer = setTimeout(change, 100);
+            }, false)
+        })()
+        
+
+        // 置顶键置顶
+        mui('body').on('tap','a',function(){document.location.href=this.href;});
+        $(".back-top").click(function(){
+        $("body,html").animate({
+            scrollTop: 0,
+        },"slow");
+        })
+        $(document).scroll(function () {
+            var totop = $(this).scrollTop();
+            if (totop >= 500) {
+                $(".back-top").css("display", "block");
+            } else {
+                $(".back-top").css("display", "none");
+            };
+        });
+        $.ajax({
+                type : "GET",
+                url : "http://localhost/php/today_buy.php",
+                dataType : "json", 
+                success : function(data) {
+                    console.log(data)
+                    for(var i=0; i<15; i++) {
+                        $(".list").append(`
+                        <li class="today-goods-item" style="display: inline-block;">    
+                            <div class="goods-img">
+                                <a href="detail.html?type=${data[i].type}">
+                                    <img src="${data[i].img_url}" />
+                                </a>
+                            </div>
+                            <div class="goods-Ntag">
+                                <span>66666666${data[i].purchase}</span>
+                            </div>
+                            <h3 class="goods-title">
+                                <a href="detail.html?type=${data[i].type}">${data[i].title} </a>
+                            </h3>
+                            <p class="goods-price">
+                                ¥<span class="p1-25807">${data[i].price}</span>
+                            </p>
+                        </li>
+                        `)
+                    }
+                }
+            });
+        (function () {
+            var ul1 = document.getElementById('ul1');
+            var slide = document.getElementById('slide');
+            var list = document.getElementsByClassName('mui-control-item');
+            var spanList = document.getElementsByClassName('Not');
+            var h = window.innerHeight; //获取当前窗口高度
+
+            // 1 .让楼层的高度和可视区的高度保持一致
+            for (var i = 0; i < list.length; i++) {
+                console.log(spanList[i],i,list.length)
+                spanList[i].index = i;
+                list[i].style.height = h + 'px';  //height = 可视化窗口
+                list[i].style.lineHeight = h + 'px';   //居中
+            }
+            //2.点击按钮可以跳转到对应的楼层
+            for (var i = 0; i < spanList.length; i++) {
+                spanList[i].index = i;
+               
+                spanList[i].onclick = function () {
+                    // 排他
+                    for (var j = 0; j < spanList.length; j++) {
+                        spanList[j].className = '';
+                    }
+                    this.className += 'choosed'; //点击选定
+                    var y = this.index;
+                    window.scrollTo(0, y * window.innerHeight)
+
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

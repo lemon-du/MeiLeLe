@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        height: 100%;
+        overflow-x: hidden;
+        background-color: #f5f5f5;
+        font-size: 13px;
+        color: #666;
+        font-family: PingFangSC-Light, 'Helvetica Neue', Helvetica, sans-serif;
+    }
+
+    a {
+        color: #333;
+        text-decoration: none;
+        outline: 0;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    ul li {
+        list-style: none;
+
+
+    }
+    .mll-header {
+        height: 2rem;
+        border-bottom: solid 1px #d8d8d8;
+        background: #fff;
+        position: relative;
+    }
+    .viewport {
+        width: 16rem;
+        min-width: 320px;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mll-header .layout-back {
+        width: 1rem;
+        height: 100%;
+        top: 0;
+        left: .6rem;
+        background: url(img/arrow_left.png) no-repeat center;
+        background-size: 1.4rem 1.5rem;
+    }
+    .mll-header .layout-middle {
+        height: 1.5rem;
+        margin: 0 1.9rem 0 1.6rem;
+        padding: .25rem 0;
+    }
+    .mll-header .layout-middle .text {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+        line-height: 2rem;
+        text-align: center;
+        font-size: .8rem;
+        color: #333;
+        overflow: hidden;
+    }
+    .expr-address {
+        position: absolute;
+        top: 0;
+        right: .8rem;
+        height: 100%;
+        line-height: 2.2rem;
+        font-weight: 400;
+        font-size: .7rem;
+        color: #333;
+    }
+    .expr-address .expr-title-icon {
+        display: inline-block;
+        width: 1.55rem;
+        height: 1.3rem;
+        margin-left: .2rem;
+        background: url(img/arrow_down.png) no-repeat;
+        background-size: 1.55rem 2rem;
+    }
+    .expr-banner {
+        height: 6.5rem;
+        margin-bottom: -2rem;
+    }
+    .swiper-container {
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        list-style: none;
+        padding: 0;
+        z-index: 1;
+    }
+    .expr-banner .swiper-slide {
+        background-color: #fff;
+    }
+    .expr-banner .swiper-slide img {
+        width: 100%;
+        height: 6.5rem;
+    }
+    .content {
+        position: relative;
+        padding: 0 .5rem .25rem;
+        margin-top: .75rem;
+        z-index: 1;
+    }
+    .content .expr-list-content-dd {
+        border-radius: .5rem;
+        margin-bottom: .75rem;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    .content .expr-content-title {
+        position: relative;
+        display: block;
+        padding: .75rem .75rem 0;
+        margin-bottom: .5rem;
+    }
+    .content .expr-content-title .expr-content-title-h5 {
+        font-weight: 400;
+        font-size: 0;
+    }
+    .content .expr-content-title .expr-content-title-h5 .exprcon-list-title {
+        display: inline-block;
+        max-width: 9.25rem;
+        font-family: PingFangSC-Medium;
+        font-size: .75rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        vertical-align: bottom;
+    }
+    .content .expr-content-title .expr-content-title-h5 .expr-distance {
+        position: relative;
+        display: inline-block;
+        padding-left: .6rem;
+        margin-left: .5rem;
+        font-size: .6rem;
+        color: #999;
+    }
+    .content .expr-content-title .expr-content-title-h5 .expr-distance i {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: .425rem;
+        height: .55rem;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background: url() no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+    }
+
+    .content .expr-content-title .expr-content-detail-p {
+        max-width: 11.25rem;
+        font-size: .6rem;
+        color: #999;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .content .expr-content-staff {
+        padding: 0 .75rem;
+        margin-bottom: .5rem;
+        font-size: 0;
+    }
+    .content .expr-content-staff .staff-img {
+        display: inline-block;
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+    .content .expr-content-staff .staff-img img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    .content .expr-content-staff .expr-btn {
+        margin-left: .5rem;
+        font-family: PingFangSC-Medium;
+        font-size: .7rem;
+        color: #333;
+        vertical-align: middle;
+    }
+    .content .expr-content-staff .expr-btn .expr_icon {
+        display: inline-block;
+        width: .8rem;
+        height: .75rem;
+        background: url() no-repeat center;
+        background-size: .75rem .7rem;
+        vertical-align: middle;
+    }
+    .content .expr-content-staff .expr-addres-btn {
+        width: 7.1rem;
+        height: 2.25rem;
+        font-size: .7rem;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .content .expr-content-coupon {
+        padding: 0 .75rem;
+        margin-bottom: .2rem;
+        font-size: 0;
+    }
+    .content .expr-content-detail {
+        padding-top: .25rem;
+    }
+    .content .expr-content-detail .expr-content-consult {
+        font-size: 0;
+        white-space: nowrap;
+    }
+    .content .expr-content-detail .expr-content-consult a.send-address-btn {
+        border-right: .025rem solid #eee;
+    }
+    .content .expr-content-detail .expr-content-consult a {
+        display: inline-block;
+        width: 50%;
+        height: 2rem;
+        border-top: .025rem solid #eee;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 2rem;
+        font-size: .7rem;
+    }
+    .content .expr-content-detail .expr-content-consult a.send-address-btn i {
+        display: inline-block;
+        width: .8rem;
+        height: .95rem;
+        margin-right: .2rem;
+        background: url() no-repeat center;
+        background-size: .725rem .9rem;
+        vertical-align: middle;
+    }
+    .content .expr-content-detail .expr-content-consult a {
+        display: inline-block;
+        width: 50%;
+        height: 2rem;
+        border-top: .025rem solid #eee;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: PingFangSC-Medium;
+        line-height: 2rem;
+        font-size: .7rem;
+    }
+
+    .content .expr-content-title .icon-arrow-right {
+        position: absolute;
+        top: 50%;
+        right: 1.75rem;
+        width: 1.525rem;
+        height: .975rem;
+        background: url(img/arrow_right.png) no-repeat;
+        background-size: contain;
+    }
+    .content .expr-content-detail .expr-content-consult a.goto-nav i {
+        display: inline-block;
+        width: .8rem;
+        height: .8rem;
+        margin-right: .2rem;
+        background: url() no-repeat center;
+        background-size: .75rem;
+        vertical-align: middle;
+    }
+    .expr-service {
+        background-color: #fff;
+    }
+    .expr-service img {
+        display: block;
+        width: 100%;
+    }
+    .mll-new-footer-q {
+        box-sizing: border-box;
+        width: 100%;
+        padding: .875rem 1.5rem .825rem 1.25rem;
+        background: #414141;
+        overflow: hidden;
+    }
+    .mll-new-footer-q .records {
+        float: left;
+    }
+    .mll-new-footer-q .records .img-btn {
+        margin-bottom: .4rem;
+    }
+    .mll-new-footer-q .records .img-btn img {
+        width: 4.15rem;
+        height: 1.1rem;
+        float: left;
+    }
+    .mll-new-footer-q .records .img-btn .btn {
+        width: 3.6rem;
+        padding: .275rem 0;
+        line-height: 1;
+        font-size: .5rem;
+        text-align: center;
+        border: .05rem solid #6d6d6d;
+        border-radius: .15rem;
+        margin: .075rem 0 0 .4rem;
+        float: left;
+    }
+    .mll-new-footer-q .records .img-btn .btn span {
+        color: #fff;
+    }
+    .clearfix:after {
+        clear: both;
+        content: "020";
+        display: block;
+        height: 0;
+        visibility: hidden;
+        line-height: 0;
+        font-size: 1px;
+    }
+    .mll-new-footer-q .records p {
+        color: #aaa;
+        font-size: .45rem;
+        line-height: 1;
+        margin-bottom: .15rem;
+    }
+    .mll-new-footer-q .qrcode {
+        float: right;
+        margin: .075rem 1rem 0 0;
+    }
+    .mll-new-footer-q .qrcode .qrcode-img img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: .15rem;
+    }
+    .mll-new-footer-q .qrcode .qrcode-text {
+        color: #aaa;
+        font-size: .55rem;
+        margin-top: .25rem;
+        line-height: 1;
+        text-align: center;
+    }
+</style>
+<body fontsize="12px">
+    <header id="JS_mll_header" class="mll-header">
+        <div id="JS_header_left_icon" class="layout-back"></div>
+        <div class="viewport">
+            <div class="layout-middle">
+                <div id="JS_header_page_title" class="text">
+                    体验馆列表
+                    <a class="expr-address" id="JS_current_href" href="javascript:void(0)">
+                        <span id="_M_REGION_NAME_">新乡</span>
+                        <em class="expr-title-icon"></em>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="expr-content">
+        <div class="expr-banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0);">
+                            <img src="https://img004.mll3321.com//images/upload/201901/9c24c1673afb0b47a3380acd6462f537.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <dl class="content" id="JS_expr_content">
+            <dd class="expr-list-content-dd">
+                <a class="expr-content-title" href="javascript:void(0)">
+                    <h5 class="expr-content-title-h5" data-name="新乡卫滨区体验馆">
+                        <span class="exprcon-list-title">
+                            新乡卫滨区体验馆 
+                        </span>
+                        <span class="expr-distance" id="JS_expr_distance_231">
+                            <i class="expr_icon expr-kilometres-icon"></i>
+                            60.7km
+                        </span>
+                    </h5>
+                    <p class="expr-content-detail-p">胜利路南段恒大影城北50米美乐乐家居</p>
+                    <span class="icon-arrow-right"></span>
+                </a>
+                <div class="expr-content-staff">
+                    <div class="staff-img">
+                        <img src="https://static.mll3321.com/wap/mpg/expr/i/guide-img-default.png">
+                    </div>
+                    <a href="javascript:void(0)" data-expr_id="231" class="expr-btn select-guide">
+                        联系他
+                        <i class="expr_icon online-advisory"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="expr-addres-btn"></a>
+                </div>
+                <a href="javascript:void(0)">
+                    <div class="expr-content-coupon expr-content-coupon-231">
+                    </div>
+                </a>
+                <div class="expr-content-detail">
+                    <p class="expr-content-consult">
+                        <a href="javascript:void(0);" data-expr_id="231" class="expr-btn send-address-btn"><i
+                                class="expr_icon send-address-message"></i>获取地址</a>
+                        <a href="javascript:void(0);" class="expr-btn goto-nav">
+                            <i class="expr_icon_nav online-nav"></i>
+                            地图导航
+                        </a>
+                    </p>
+                </div>
+            </dd>
+        </dl>
+        <div class="expr-service">
+            <img src="https://static.mll3321.com/wap/mpg/expr/i/expr-info.png">
+            <img src="https://static.mll3321.com/wap/mpg/expr/i/expr-service.png">
+        </div>
+    </div>
+    <footer class="mll-new-footer-q">
+        <div class="records">
+            <div class="img-btn clearfix">
+                <img src=" https://static.mll3321.com/wap/common/i/ft-logo-q.png">
+                <div class="btn"><a href="javascript:void(0)"><span>电脑版</span></a></div>
+            </div>
+            <p><span style="display:inline-block;line-height:150%">深圳象限家居设计有限公司 版权所有 <br>增值电信业务经营许可证:粤B2-20180126</span>
+            </p>
+            <p><img src="https://img002.mll3321.com/images/upload/201912/7c78262978dcd03bcbd07e1bcab76b57.png"
+                    style="background:none;width:15px;height:15px;margin-top:2px"> 
+                粤公网安备44030602000294号
+            </p>
+        </div>
+        <div class="qrcode">
+            <div class="qrcode-img"><img src="https://static.mll3321.com/wap/common/i/ft-qrcode.png"></div>
+            <div class="qrcode-text">有赞商城</div>
+        </div>
+    </footer>
+    <Script>
+       //获得slider插件对象
+       var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval: 5000//自动轮播周期，若为0则不自动播放，默认为0；
+        });
+        (function () {
+            function change() {
+                var deviceWith = document.documentElement.getBoundingClientRect().width;
+                if (deviceWith > 750) {
+                    deviceWith = 750
+                }
+                document.documentElement.style.fontSize = deviceWith / 16 + "px";
+            }
+            var timer;
+            change();
+            window.addEventListener("resize", function () {
+                clearTimeout(timer)
+                timer = setTimeout(change, 100);
+            }, false)
+        })()
+        
+    </Script>
+</body>
+
+</html>

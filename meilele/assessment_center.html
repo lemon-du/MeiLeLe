@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/iconfont.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/my_meilele.css">
+    <title>Document</title>
+</head>
+<style>
+    .viewport {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mui-slider-indicator.mui-segmented-control {
+        height: 2.3rem;
+        border-top: 1px solid #d8d8d8;
+        background: #fff;
+    }
+    .mui-slider {
+        width: 100%;
+        top: 8.35rem;
+        background: #efeff4 !important;
+    }
+    .comment-list .ad img {
+        width: 100%;
+        position: absolute;
+        top: 2rem;
+        z-index: 11111;
+    }
+    img {
+        border: none;
+        vertical-align: middle;
+    }
+    .comment-list .filter {
+        height: 39px;
+        background: #fff;
+        border-bottom: solid 1px #d8d8d8;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -o-box;
+        display: -ms-box;
+        width: -moz-available;
+    }
+    .comment-list .filter li {
+        width: 33.3%;
+        position: relative;
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -o-box-flex: 1;
+        box-flex: 1;
+    }
+    .comment-list .goods-list {
+        background: #fff;
+        padding-left: 10px;
+        border-top: solid 1px #d8d8d8;
+        margin-top: 10px;
+    }
+    .comment-list .goods-list li:first-child {
+        border-top: none;
+    }
+    .comment-list .goods-list li {
+        padding: 15px 15px 15px 0;
+        border-top: solid 1px #d8d8d8;
+    }
+    .m_no_result {
+        font-size: 15px;
+        color: #aaa;
+        text-align: center;
+        margin: 120px 0;
+    }
+    .mui-segmented-control.mui-scroll-wrapper .mui-control-item {
+        display: inline-block;
+        width: auto;
+        padding: 0 15px;
+        border: 0;
+    }
+    .m_no_result div {
+        background: url("https://img004.mll3321.com/wap/images/nodata/nodata_01.png")no-repeat;
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+        margin: 0 auto;
+        margin-bottom: 6px;
+    }
+    .m_no_result {
+        font-size: 15px;
+        color: #aaa;
+        text-align: center;
+        margin: 120px 0;
+    }
+    .mui-slider .mui-slider-group {
+        font-size: 0;
+        position: relative;
+        -webkit-transition: all 0s linear;
+        background: #efeff4 !important;
+        transition: all 0s linear;
+        white-space: nowrap;
+    }
+    .mui-ios .mui-table-view-cell {
+        height: 22rem;
+        background: #fff !important;
+    }
+    .mui-segmented-control.mui-scroll-wrapper .mui-scroll {
+        width: 100%;
+    }
+    .mui-slider {
+        width: 100%;
+        top: 8.35rem;
+        background: #fff;
+    }
+    .mui-slider-indicator.mui-segmented-control {
+        height: 2.3rem;
+        border-top: 1px solid #d8d8d8;
+    }
+    .mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+        width: 33.33%;
+        height: 2.3rem;
+        font-size: 0.7rem;
+        line-height: 2.3rem;
+    }
+    .mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-slider-group .mui-slider-item {
+        margin-top: 0.5rem;
+        border-top: 1px solid #c8c7cc;
+        border-bottom: 1px solid #efeff4;
+    }
+    .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+        color: #da0000;
+        border-bottom: 4px solid #da0000 !important;
+        background: 0 0;
+    }
+    .mui-table-view-cell .viewport .no-bouns img {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
+    .no-bouns {
+        padding: 5rem 0;
+        margin: auto;
+        text-align: center;
+    }
+    .mui-table-view-cell .viewport .no-bouns h4 {
+        color: #999;
+        margin-top: 1rem;
+    }
+</style>
+<body>
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!-- 顶部导航--始 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-pull-left layout-back" href="javascript:void(0);" id="aaa"></a>
+                <h1 class="mui-title">评价中心</h1>
+            </header>
+            <!-- 中间内容 -->
+            <div class="viewport comment-list">
+                <div class="ad">
+                    <a href="javascript:void(0);">
+                        <img src="https://img004.mll3321.com/images/201907/1564340038639519104.jpg">
+                    </a>
+                </div>
+                <div id="slider" class="mui-slider">
+                    <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted"
+                        id="segmented">
+                        <div class="mui-scroll">
+                            <a class="mui-control-item mui-active border_bottom" href="#item1mobile">
+                                待评价<span>(0)</span>
+                            </a>
+                            <a class="mui-control-item border_bottom" href="#item2mobile">
+                                追加晒家<span>(0)</span>
+                            </a>
+                            <a class="mui-control-item border_bottom" href="#item3mobile">
+                                已完成<span>(0)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mui-slider-group">
+                        <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                            <ul class="mui-table-view">
+                                <li class="mui-table-view-cell">
+                                    <div class="viewport">
+                                        <div class="no-bouns">
+                                            <img src="https://img004.mll3321.com/wap/images/nodata/nodata_01.png">
+                                            <h4>暂无评价的商品</h4>
+                                            <a class="go-on" href="meilele-index.html">随便逛逛</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="item2mobile" class="mui-slider-item mui-control-content ">
+                            <ul class="mui-table-view">
+                                <li class="mui-table-view-cell">
+                                    <div class="viewport">
+                                        <div class="no-bouns">
+                                            <img src="https://img004.mll3321.com/wap/images/nodata/nodata_01.png">
+                                            <h4>暂无追加晒图的商品</h4>
+                                            <a class="go-on" href="meilele-index.html">随便逛逛</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="item3mobile" class="mui-slider-item mui-control-content ">
+                            <ul class="mui-table-view">
+                                <li class="mui-table-view-cell">
+                                    <div class="viewport">
+                                        <div class="no-bouns">
+                                            <img src="https://img004.mll3321.com/wap/images/nodata/nodata_01.png">
+                                            <h4>暂无已完成评价的商品</h4>
+                                            <a class="go-on" href="meilele-index.html">随便逛逛</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 尾页 -->
+    <div class="menu">
+        <a href="meilele-index.html" class="subMenu text-center">
+            <i class="iconfont icon-men"></i>
+            <div class="menu_name">首页</div>
+        </a>
+        <a href="sort.html" class="subMenu text-center">
+            <i class="iconfont icon-guizi"></i>
+            <div class="menu_name">分类</div>
+        </a>
+        <a href="shopping-car.html" class="subMenu text-center">
+            <i class="iconfont icon-gouwuche"></i>
+            <div class="menu_name">购物车</div>
+        </a>
+        <a href="my_meilele.html" class="subMenu text-center active">
+            <i class="iconfont icon-xiaolian"></i>
+            <div class="menu_name">我的</div>
+        </a>
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Public.js"></script>
+</body>
+</html>

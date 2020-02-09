@@ -1,0 +1,20 @@
+.sidebar-btn {
+    position: fixed;
+    right: .5rem;
+    bottom: 3rem;
+    z-index: 5;
+}
+.sidebar-btn li {
+    position: relative;
+}
+.sidebar-btn .back-top {
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 50%;
+    background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAOCAYAAABKKc6PAAABa0lEQVQ4jb3Uz0qUcRjF8c9MXkAgA1EgdAWhUKsMRnRAETe6cNNF5CpdWBHktOkiaqkrERoUUlCplUWXIASh2KaW/mnxOwMhMVozeuDHC8/7POd8eX4vb6XZbOpSj/N8141JtYvZm1jB25zl1K4V5AH2MI0j/MBMavevA6SCJ9jBXXzEEAbxKbXd9FSuCqQfq3iDPrzGI+znDKfWl57VzPQUZFhZ+yQOMYGnOP6j5zi1ifRMZuZhL0CqmMcHDGBLuYZWh5lWerYysxnAjlmdXtbwHq+U+36JUXy7AF56RjNTwVK8av8KUsdXNPAdY1jEySUg2jrJzFg8GvGsXwbkBl5gA7ewjnvKev9Xm/FYj+cGnifrryB30rSIMyxgHAddQLR1EK+FeD9L1u3zIA18Vta2jxHlXk97ANHWaTxHklHHl2SrYlb50mtYU35Q2z0EOK/tZKwls4XZqrKqX5jDlPLLvmodJWsOP3H2G0MaU29g13PkAAAAAElFTkSuQmCC) no-repeat center;
+    background-size: .85rem .35rem;
+}
+.hidden {
+    visibility: hidden;
+}

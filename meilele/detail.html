@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link href="style/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/details.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-pull-left layout-back"></a>
+        <a class="layout-cart" href="shopping-car.html">
+            <i id="JS_goods_cart_number"></i>
+        </a>
+        <a id="menu" class="mui-action-menu mui-pull-right layout-nav" href="#topPopover"></a>
+        <h1 class="mui-title">商品详情</h1>
+        <div id="topPopover" class="mui-popover">
+            <div class="arrows"></div>
+            <ul class="nav-list">
+                <li class="list_index">
+                    <a href="meilele-index.html">
+                        <em></em>
+                        商城首页
+                    </a>
+                </li>
+                <li class="list_category">
+                    <a href="sort.html">
+                        <em></em>
+                        分类搜索
+                    </a>
+                </li>
+                <li class="list_user">
+                    <a href="my_meilele.html">
+                        <em></em>
+                        个人中心
+                    </a>
+                </li>
+                <li class="list_expr">
+                    <a href="experience.html">
+                        <em></em>
+                        体验馆
+                    </a>
+                </li>
+                <li class="list_chat">
+                    <a href="javascript:void(0);" class="last">
+                        <em></em>
+                        咨询客服
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="viewport  display-new">
+        <div id="JS_goods_gallery" class="goods-gallery">
+            <div id="JS_gallery_swiper_container" class="swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper" id="banner">
+
+                    <div class="tittup">
+                        <div class="arrow-box">
+                            <span class="arrow"></span>
+                        </div>
+                        <span class="inner">释放查看图文详情</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination goods-gallery-mask"></div>
+        </div>
+        <div id="JS_top_send_sms" class="top-send-sms" style="display: block;">
+            <div class="sms-content">
+                <div class="main" data-qr_code_type="m_gdetail1" data-qr_code="1">
+                    <ul>
+                        <li style="font-size:120%;font-weight:bold;">
+                            <span class="city">新乡</span>共有<span class="num">1</span>
+                            家体验馆可看实物
+                        </li>
+                        <li style="letter-spacing:-1px;">
+                            <span class="jTitle">为您推荐</span>：<span class="expr" style="width: 40%;">新乡卫滨区体验馆</span>
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="sms-btn" data-qr_code_type="m_gdetail1" data-qr_code="1">获取门店地址</a>
+                </div>
+            </div>
+        </div>    
+        <section id="JS_goods_abstract" class="goods-abstract" data-height="162.33334350585938">
+            <div class="padding-box">
+                
+            </div>  
+        </section>
+        <ul id="JS_goods_options" class="goods-options">
+            <li class="item property JS_consultant" style="border-top: none;">
+                <div class="item-in">
+                    <div class="key">已选：</div>
+                    <div class="val">
+                        <span id="Goods_attr_types">1+3+左贵妃&nbsp;&nbsp;</span>
+                        <span id="Goods_choose_num">1</span>套
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div id="app">
+            <buttton class="me">
+                <ul class="opt-service" id="JS_goods_service">
+                    <li>保障：</li>
+                    <li class="JS_tip_item JS_consultant">
+                        <span>30天退货</span>
+                    </li>
+                    <li class="JS_tip_item JS_consultant">
+                        <span>质保三年</span>
+                    </li>
+                    <li class="JS_tip_item JS_consultant">
+                        <span>贵就赔</span>
+                    </li>
+                    <li></li>
+                </ul>
+            </buttton>
+        </div>
+        <div class="experience-museum">
+            <div class="experience-museum-img">
+                <img src="http://image.meilele.com/images/expr/1375844942578.jpg">
+            </div>
+            <div class="experience-museum-info">
+                <h3>美乐乐<span class="museum-city">新乡</span><span class="museum-num">1</span>家体验馆</h3>
+                <div class="info-content">
+                    <div class="info-content-img">
+                        <img src="http://image.meilele.com/images/201703/1488842263960810402.jpg">
+                    </div>
+                    <div class="info-content-text">
+                        <p>体验实物品质</p>
+                        <p>免费搭配设计</p>
+                    </div>
+                </div>
+                <button>预约高级顾问服务</button>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="receiving-gifts">
+            <img src="http://img003.mll3321.com/images/201908/1565588323157916080.png">
+        </a>
+        <div id="jsGoodsComment" class="goods-comment JS_consultant">
+            <a href="comment.html">
+                <dl>
+                    <dt>
+                        <div class="key">商品评价</div>
+                        <div class="val">
+                            <span class="total">共15个评价</span>
+                        </div>
+                        <div class="arrow arrowsp"></div>
+                    </dt>
+                    <dd>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td id="jsGoodsCommentLevel" class="level">
+                                        <span class="star-light"></span>
+                                        <span class="star-light"></span>
+                                        <span class="star-light"></span>
+                                        <span class="star-light"></span>
+                                        <span class="star-light"></span>
+                                    </td>
+                                    <td class="phone">mll_15974180***</td>
+                                    <td class="date">2018-01-14</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>实物不错，朋友介绍的，果然没失望</p>
+                        <ul id="jsGoodsCommentGalleryList">
+                            <li class="JS_gallery_item">
+                                <img src="https://image.meilele.com/images/small/155/width/150/height/96/mode/1/encrypt/0badacf430076b7f6cbd5f84d99ce579/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNCqX4cPo4bGbNnEuhKUJ6l3VP5RY5+AKQYnmcopDA0jA==.jpg">
+                            </li>
+                            <li class="JS_gallery_item">
+                                <img src="https://image.meilele.com/images/small/280/width/150/height/96/mode/1/encrypt/edee9d7477602cde8d71dee316732c46/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMG1GONHGpRw8ku53q2rUak5ZlfGgBljhBydqL8ZDR4tg==.jpeg">
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </a>
+        </div>
+        <div class="goods-extend">
+            <div id="JS_goods_table_position" style="height: 41px; transform-origin: 0px 0px; opacity: 1; transform: scale(1, 1); display: none;"></div>
+            <header id="JS_goods_fixed_tab_header" class="" style="top: 0px;">
+                <ul id="JS_goods_extend_header">
+                    <li class="current-list current" data-key="tuwen"><a href="javascript:void(0);">图文详情</a></li>
+                    <li class="current-list" data-key="guige"><a href="javascript:void(0);">规格参数</a></li>
+                    <li class="current-list" data-key="xiangshi"><a href="javascript:void(0);">相似推荐</a></li>
+                </ul>
+            </header>
+            <section id="JS_goods_extend_body">
+                <div id="JS_goods_attr_box" class="content-item goods-picture goods_item_on">
+                </div>
+                <div id="JS_goods_extend_guige" class="content-item goods-standard">
+                </div>
+                <div id="JS_goods_extend_offer" class="content-item goods-offer">
+                </div>
+            </section>
+        </div>
+        <div class="hot_recommend">
+			<h3 class="hot_recommend_title">
+				爆款推荐
+                <a href="category.html?id=study" class="recommend_more">
+                    更多<span></span>
+                </a>
+			</h3>
+            <div class="hot_recommend_content swiper-container swiper-container-horizontal swiper-container-free-mode">
+                <div class="swiper-wrapper" id="faddishs">
+                </div>
+            </div>
+		</div>
+        <div class="look_again">
+            <h3 class="look_again_title">
+                <div class="title_line"></div>
+                <div class="title_text"><span>看了又看</span></div>
+            </h3>
+            <div class="look_again_goods">
+                <ul class="goods_list">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="mll-new-footer-q">
+        <div class="records">
+            <div class="img-btn clearfix">
+                <img src="https://static.mll3321.com/wap/common/i/ft-logo-q.png">
+                <div class="btn">
+                    <a href="www.meilele.com/">
+                        <span>电脑版</span>
+                    </a>
+                </div>
+            </div>
+            <p>深圳象限家居设计有限公司 版权所有</p>
+            <p onclick="location.href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030602000294'">
+                粤公网安备44030602000294号
+            </p>
+        </div>
+        <div class="qrcode">
+            <div class="qrcode-img"><img src="https://static.mll3321.com/wap/common/i/ft-qrcode.png"></div>
+            <div class="qrcode-text">有赞商城</div>
+        </div>
+    </footer>
+    <div id="JS_goods_toolbar" class="goods-toolbar">
+        <table>
+            <tbody>
+                <tr>
+                    <td width="45">
+                        <a href="javascript:void(0);" class="collect JS_experience">
+                            <span></span><em>收藏</em>
+                        </a>
+                    </td>
+                    <td width="45">
+                        <a href="javascript:void(0);" class="chat JS_experience">
+                            <span></span><em>客服</em>
+                        </a>
+                        <span class="chat-num" id="JS_chat_num"></span>
+                    </td>
+                    <td width="32%">
+                        <a href="javascript:void(0);" class="tocart JS_experience cart_only">
+                            加入购物车
+                        </a>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0);" class="look" data-qr_code_type="m_gdetail2" data-qr_code="1">
+                            获取门店地址
+                        </a>
+                    </td>           
+                </tr>
+            </tbody>
+        </table>
+    </div>              
+    <ul class="sidebar-btn">
+        <li class="back-top hidden"></li>
+    </ul>
+    <div id="JS_slider_mask" class="slider-up-mask"></div>
+    <div class="tankuang">
+        <div id="JS_slider_container" class="slider-up-container">
+            <header>
+                <span class="txt">服务说明</span>
+                <span class="close"></span>
+            </header>
+            <ul class="layer-content illustration-item">
+                <li>
+                    <h4><i></i>
+                        <b>美乐乐自营旗舰店</b>
+                        发货&amp;售后
+                    </h4>
+                </li>
+                <li>
+                    <h4><i></i>30天无忧退换货</h4>
+                    <p>A.定制类商品不支持30日无忧退换货；</p>
+                    <p>B.30天无忧退换货服务条款针对美乐乐家居网自营商品；</p>
+                    <p>C.30天无忧退货,需要客户保持商品本身完好，商表面无划痕、无磨（破）损、无磕碰、无使用、无安装、拆卸等痕迹；</p>
+                    <p>D.原包装、附件、赠品等不完整、人为损坏的商品不予退换；</p>
+                    <p>E.体验馆特卖商品、特价、赠品、订制品、秒杀、团购、限购等特殊商品，以及有“不予退换”及相关明确标示的商品均视作处理品，不予退换；</p>
+                    <p>F.未经美乐乐授权，私自维修、改动、不正确安装造成的问题商品不予退换；</p>
+                    <p>G.个人原因（如：不喜欢、不需要、不合适等），须商品未安装、未使用，且不影响二次销售，并由消费者支付（物流费、送货费、搬运费等、商品售价20%的违约金）相关费用</p>
+                </li>
+                <li>
+                    <h4><i></i>质保三年</h4>
+                    <p style="color:#da0000;">保修期限:</p>
+                    <p>自交货之日起3年内产品在正常使用情况下产生质量问题，消费者将享受免费保修3年、终身有偿维护的服务承诺；</p>
+                    <p style="color:#da0000;">具体保修如下：</p>
+                    <p>A.板式、实木、金属类家具3年质保</p>
+                    <p>B.大理石、五金类餐桌、茶几质保3年</p>
+                    <p>C.沙发、床垫、软床等面料、皮料、海绵、棕垫质保1年</p>
+                    <p>D.沙发内架质保3年</p>
+                    <p>E.床垫内部弹簧质保10年（部分产品以网站展示为准）</p>
+                    <p>F.更换后的产品零配件质保6个月</p>
+                    <p>G.特价、清仓、特卖惠、限购等家具处理品质保1年；</p>
+                    <p style="color:#da0000;">本承诺不适用于下列情况：</p>
+                    <p>A.产品已经超出免费保修期； </p>
+                    <p>B.非美乐乐自营产品（非家具、代运营、第三方产品以网站展示为准）；</p>
+                    <p>C.无美乐乐购买订单合同或通过信息无法在美乐乐查询到购买信息； </p>
+                    <p>D.未按说明书要求/错误/不当使用、保管、保养或操作产品造成的故障或损坏；</p>
+                    <p>E.由非美乐乐授权人员修理、更改、加装或拆卸而造成的损坏；</p>
+                    <p>F.因意外因素或人为原因导致的故障或损坏； </p>
+                    <p>G.因自然灾害等不可抗力（如地震、火灾、雷击等）原因造成的故障或损坏；</p>
+                    <p>H.对局部存在一定质量缺陷的产品进行特价处理，并且在订货合同上注明特价产品的；</p>
+                    <p>I.店面处理品、玻璃产品及赠品不在免费保修范围内；</p>
+                    <p>J.产品问题是否属于质量问题由美乐乐售后服务认定；若您对认定有异议时，双方可协商解决或提请国家认可的省级以上质量监督机构进行认定。</p>
+                    <p>k.美乐乐质保时间由1年改为3年，下单时间从2018年8月1日生效。</p>
+                </li>
+                <li>
+                    <h4><i></i>贵就赔</h4>
+                    <p>美乐乐承诺：已购商品未出库前，如果降价，返还差额，如果涨价，不用补差价。</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="plg-mask" style="z-index: 2018"></div>
+
+    <script src="js/mui.min.js"></script>
+    <script src="https://cdn.bootcss.com/Swiper/4.0.5/js/swiper.min.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/details.js"></script>
+</body>
+</html>

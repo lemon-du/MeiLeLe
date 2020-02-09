@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/shopping-car.css">
+</head>
+<style>
+</style>
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-pull-left layout-back"></a>
+        <a id="menu" class="mui-action-menu mui-pull-right layout-nav" href="#topPopover"></a>
+        <h1 class="mui-title">商品详情</h1>
+        <div id="topPopover" class="mui-popover">
+            <div class="arrows"></div>
+            <ul class="nav-list">
+                <li class="list_index">
+                    <a href="meilele-index.html">
+                        <em></em>
+                        商城首页
+                    </a>
+                </li>
+                <li class="list_category">
+                    <a href="sort.html ">
+                        <em></em>
+                        分类搜索
+                    </a>
+                </li>
+                <li class="list_user">
+                    <a href="my_meilele.html">
+                        <em></em>
+                        个人中心
+                    </a>
+                </li>
+                <li class="list_expr">
+                    <a href="experience.html">
+                        <em></em>
+                        体验馆
+                    </a>
+                </li>
+                <li class="list_chat">
+                    <a href="javascript:void(0)" class="last">
+                        <em></em>
+                        咨询客服
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="cart_list" id="JS_shop_1">
+        <div class="js_title">
+            <i class="checkbox checkbox1 checked" id="JS_checkbox_title"></i>
+            <span class="msg">
+                美乐乐
+            </span>
+        </div>
+        <div class="js_box">
+            <table class="table noactive">
+                <tbody id="JS_goods_32801432">
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <table style="width:100%;height:50px;background:#fff;position:fixed;bottom:0;z-index:2;">
+        <tbody>
+            <tr>
+                <td style="padding-left:10px;border-top:1px solid #d8d8d8;">
+                    <i class="checkbox checked JS_checkbox_title"></i>
+                    <span style="height:20px;line-height:20px;vertical-align:top;font-size: 13px;color: #666;">
+                        全选
+                    </span>
+                </td>
+                <td style="text-align:left;padding-right:10px;border-top:1px solid #d8d8d8;line-height:15px;">
+                    <span style="color:#da0000;font-size: 14px;">合计:<span style="font-size:14px;font-weight:bold;"
+                            id="JS_final_price">¥24797.00</span></span><br><span id="JS_fee_tip"
+                        style="font-size:12px;transform:scale(.88);">
+                        不含运费
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <footer class="mll-new-footer-q">
+        <div class="records">
+            <div class="img-btn clearfix">
+                <img src="https://static.mll3321.com/wap/common/i/ft-logo-q.png">
+                <div class="btn"><a href="https://www.meilele.com/"><span>电脑版</span></a></div>
+            </div>
+            <p><span style="display:inline-block;line-height:150%">深圳象限家居设计有限公司 版权所有 <br>增值电信业务经营许可证:粤B2-20180126</span>
+            </p>
+            <p onclick="location.href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030602000294'">
+                <img src="https://img002.mll3321.com/images/upload/201912/7c78262978dcd03bcbd07e1bcab76b57.png"
+                    style="background:none;width:15px;height:15px;margin-top:2px"> 粤公网安备44030602000294号</p>
+        </div>
+        <div class="qrcode">
+            <div class="qrcode-img"><img src="https://static.mll3321.com/wap/common/i/ft-qrcode.png"></div>
+            <div class="qrcode-text">有赞商城</div>
+        </div>
+    </footer>
+    <div style="height:50px;"></div>
+    <div id="JS_lightBox_k472t72e" class="mob_ligthBox"
+        style="width: 100%; position: fixed; left: 0px; top: 200px; z-index: 500;">
+        <div class="mob-layer-content" style="margin-left:auto;margin-right:auto;width:80%">
+            <div id="JS_message_box" class="message-box" style="margin-top: 20px;">
+                <div class="message">
+                    <div style="text-align:center">您确定要删除该宝贝吗？</div>
+                </div>
+                <ul class="button">
+                    <li id="JS_msgbox_btn_0" style="font-weight:normal">取消</li>
+                    <li id="JS_msgbox_btn_1" style="border-left:1px solid #d8d8d8;">确定</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="JS_mask"
+        style="height: 568px; width: 100%; position: fixed; background: rgba(0, 0, 0, 0.5); top: 0px; left: 0px; z-index: 499;">
+    </div>
+	
+    <script src="js/changeSize.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script>
+        mui.init({
+            swipeBack: true //启用右滑关闭功能
+        });
+        mui('body').on('shown', '.mui-popover', function (e) {
+        });
+        mui('body').on('hidden', '.mui-popover', function (e) {
+        });
+        var newdata=null;
+        var priceall=[];
+        var numall=null;
+        $.ajax({
+            url:"http://localhost/php/shopping-car.php",
+            type:"get",
+            success: function(data) {
+				if(data!="null") {
+					newdata=JSON.parse(data)
+					for(var i=0; i<newdata.length; i++) {
+						$("#JS_goods_32801432").get(0).innerHTML+=`
+						<tr class="goods dashed">
+							<td class="td1">
+								<i class="checkbox goods_check checked"></i>
+								<a id="rec_32801432"></a>
+							</td>
+							<td class="td2">
+								<a href="http://localhost:81/mei/detail.html?type=${newdata[i].type}">
+									<img src=${newdata[i].img}
+										width="115" height="76">
+								</a>
+							</td>
+							<td class="td3">
+								<div class="goods_name">
+									<a href="http://localhost:81/mei/detail.html?type=${newdata[i].type}">
+										${newdata[i].title}
+									</a>
+								</div>
+								<div class="price">
+									<span class="price_1">${newdata[i].price}</span>
+								</div>
+								<div>
+									<a class="goods_number goods_number1  del disabled">-</a><input class="goods_number inp" type="text"
+										value="1"><a class="goods_number goods_number1 add">+</a>
+									<a class="delete_icon JS_delete_goods"></a>
+								</div>
+							</td>
+						</tr>
+						`
+					}
+				}
+                
+                // 数量加减
+                $(".add").click(function () {
+                    $(this).prev().val(Number($(this).prev().val()) + 1)
+                    if ($(this).prev().val() > 1) {
+                        $(this).prev().prev().removeClass("disabled")
+                    }
+                    countMoney()
+                })
+                $(".del").click(function () {
+                    $(this).next().val(Number($(this).next().val()) - 1)
+                    if ($(this).next().val()<= 1) {
+                        $(this).addClass("disabled")
+                        $(this).next().val(1)
+						countMoney()
+                    }
+                    if(Number($(this).next().val())>1) {
+                        numall=Number($("#JS_final_price").text())-Number($(this).parent().prev().children().text().split("¥")[1])
+                        $("#JS_final_price").text(numall)
+                    }
+                })
+                // 遮罩层消失
+                $("#JS_msgbox_btn_0").click(function() {
+                    $("#JS_mask").hide();
+                    $("#JS_lightBox_k472t72e").hide()
+                })
+                // 删除商品
+                $(".JS_delete_goods").click(function() {
+                    $(this).addClass("yesdel").parent().parent().parent().children(".td3").children("div").children("#JS_delete_goods").removeClass("yesdel")
+                    $("#JS_mask").show();
+                    $("#JS_lightBox_k472t72e").show()
+                })
+                // 确定删除
+                $("#JS_msgbox_btn_1").click(function() {
+                    $("#JS_mask").hide();
+                    $("#JS_lightBox_k472t72e").hide()
+                    var txt=$(".yesdel").parent().prev().prev(".goods_name").children("a").text().trim()
+                    $.ajax({
+                        url: "http://localhost/php/del_goods.php",
+                        type: "get",
+                        data: {
+                            word:txt
+                        },
+                        success: function(data) {
+                            console.log(data)
+                        },
+                        error: function(error) {
+                            console.log(error)
+                        }
+                    })
+                    $(".yesdel").parent().parent().parent().remove()
+                })
+                $(".td1 .checkbox").click(function () {
+                    $(this).toggleClass("checked");
+                    if ($(".td1 .checked").length < $(".td1 .checkbox").length) {
+                        $(".JS_checkbox_title,#JS_checkbox_title").removeClass("checked")
+                    } else if ($(".td1 .checked").length == $(".td1 .checkbox").length) {
+                        $(".checkbox").addClass("checked")
+                    }
+                    countMoney()
+                })
+                function countMoney() {
+                    priceall=[];
+                    for(var i=0; i<$(".td1 .checked").length; i++) {
+                        priceall.push(Number($(".td1 .checked").parent().next().next(".td3").children().children(".price_1").eq(i).html().split("¥")[1])*Number($(".td1 .checked").parent().next().next(".td3").children().children(".inp").eq(i).val()))
+                    }
+                    var count=0;
+                    priceall.forEach((val)=>{
+                        count=Number(count)+Number(val)
+                    })
+                    $("#JS_final_price").text(count)
+                }
+                countMoney()
+                 // 美乐乐选中
+                $(".JS_checkbox_title,#JS_checkbox_title").click(function () {
+                    $(".checkbox").toggleClass("checked")
+                    countMoney()
+                }) 
+            },
+            error:function(error) {
+                console.log(error)
+            }
+        })
+        $(".layout-back").click(function() {
+            window.history.go(-1)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    height: 100%;
+    background-color: #f5f5f5;
+    font-size: 13px;
+    color: #666;
+    font-family: PingFangSC-Light,'Helvetica Neue',Helvetica,sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+.mll-header-search {
+    background: #fff;
+    box-sizing: border-box;
+    height: 1.9rem;
+    padding: 0.325rem 0.65rem;
+    border-bottom: 0.025rem solid #dfdfdf;
+}
+.mll-header-search .layout-search-form {
+    background: #eee;
+    text-align: center;
+    border-radius: 0.2rem;
+}
+.mll-header-search .layout-search-input {
+    height: 1.25rem;
+    line-height: 1.25rem;
+    font-size: 0.65rem;
+    color: #aaaaaa;
+    overflow: hidden;
+    font-family: PingFangSC-Light;
+}
+.mll-header-search .layout-search-input i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.625rem;
+    height: 0.625rem;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAAAWlBMVEUAAAC7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7tso/x4AAAAHXRSTlMAH/P5p7l4Gtlbrqt0KCPjaVeiTx0P0G0N5uViCZBZC4gAAACvSURBVCjPdZJXFsMgDASFqO7dTtv7XzMhdniOgfmdJyGkpYPW6Dvw0EbQH0IhoM6uYMiqaJZbU1QSPAVRA6UIbStg+1UAhk7UwLC/wYcI9OBvC4WSLigoXwIprsZKCCLz8REjaiKNITYTNFGHJjYzOiKJhWLA3rwypkOb7JafIDt1n/uptLntjMdGt2ijM3mG+Ap98nIlAGfT1346r5IJsbsKqXLMbk+VVyulsat+A0ktDaa1tpulAAAAAElFTkSuQmCC) center center no-repeat;
+    background-size: contain;
+    margin-top: -0.1rem;
+    margin-right: 0.2rem;
+}
+.mll-header-search .layout-search-input {
+    height: 1.25rem;
+    line-height: 1.25rem;
+    font-size: 0.65rem;
+    color: #aaaaaa;
+    overflow: hidden;
+    font-family: PingFangSC-Light;
+}
+.category nav ul li {
+    height: 2.25rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    padding: 0.625rem 0;
+}
+.category section ul.special li {
+    margin-top: 1rem;
+}
+.category section ul li {
+    width: 3.25rem;
+    text-align: center;
+    float: left;
+    margin: 0.5rem 0.375rem 0 0;
+}
+.category nav ul li.current a {
+    border-left-color: #c81c28;
+    border-right-color: #fff;
+    color: #c81c28;
+    background: #fff;
+    font-family: PingFangSC-Light;
+    font-size: 0.7rem;
+}
+.category nav ul li a {
+    display: block;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    font-size: 0.6rem;
+    border-left: solid 2px #fff;
+    font-family: PingFangSC-Light;
+    background: #fff;
+    color: #636363;
+}
+.category nav {
+    width: 3.8rem;
+    float: left;
+    box-sizing: border-box;
+    border-right: 0.025rem solid #dfdfdf;
+}
+.category {
+    height: 100% !important;
+    background: #fff;
+    overflow: hidden;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.category section ul.special li img {
+    width: 3.25rem;
+    height: 3.8rem;
+    border-radius: 0.1rem;
+}
+.category section ul.special {
+    margin-top: 0;
+}
+.clearfix {
+    overflow: hidden;
+}
+.category section .category-list .sort-h5 {
+    float: left;
+    font-size: 0.65rem;
+    height: 0.65rem;
+    line-height: 0.65rem;
+    color: #333;
+    font-family: PingFangSC-Light;
+    margin-top: 1rem;
+    margin-left: 0.25rem;
+}
+.category section .title {
+    overflow: hidden;
+}
+.category section .category-list {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    background: #fff;
+}
+.category section {
+    margin-left: 3.8rem;
+}
+.category section ul li a {
+    display: block;
+    color: #666666;
+}
+.category section ul li img {
+    width: 3.25rem;
+    height: 3.25rem;
+}
+.category section ul li span {
+    display: block;
+    font-size: 0.55rem;
+    height: 0.675rem;
+    line-height: 0.675rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #3a3a3a;
+    font-family: PingFangSC-Light;
+}
+.category nav ul {
+    background: #fff;
+}
+/* 尾部 */
+.menu {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    color: #666;
+    z-index: 100;
+    padding-top: 0.2rem;
+    background-color: #fff;
+}
+.subMenu {
+    width: 25%;
+    float: left;
+    cursor: pointer;
+}
+.menu_name {
+    height: 3rem;
+    width: 100%;
+    font-size: 0.6rem;
+}
+a {
+    color: #333 !important;
+}
+.active {
+    color: #c81c28 !important;
+}
+a:hover {
+    color: #333;
+}
+a:focus {
+    color: #c81c28;
+    text-decoration: underline;
+}
+.text-center {
+    text-align: center
+}
+button {
+    border-style: none;
+}
+.bottom {
+    color:#666;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/iconfont.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/my_meilele.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .address-modify {
+        margin-top: 10px;
+    }
+    .viewport {
+        width: 100%;
+        margin-top: 2.6rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .address-modify ul {
+        border-top: solid 1px #d8d8d8;
+        border-bottom: solid 1px #d8d8d8;
+        background: #fff;
+        padding-right: 10px;
+    }
+    .address-modify ul li:first-child {
+        border-top: none;
+    }
+    .address-modify ul li {
+        padding: 12px 0;
+        border-top: solid 1px #d8d8d8;
+        font-size: 15px;
+        color: #333;
+        padding-right: 10px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -o-box;
+        display: -ms-box;
+        width: 100%;
+        box-sizing: border-box;
+        margin-left: 10px;
+    }
+    .address-modify ul li .key {
+        line-height: 24px;
+    }
+    .address-modify ul li .val {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -o-box-flex: 1;
+        -ms-box-flex: 1;
+    }
+    .address-modify ul li input {
+        padding: 0;
+        margin: 0;
+    }
+    .address-modify ul li input,
+    .address-modify ul li select {
+        height: 24px;
+        line-height: 24px;
+    }
+    .address-modify ul li input,
+    .address-modify ul li select,
+    .address-modify ul li textarea {
+        width: 100%;
+        outline: none;
+        color: #333;
+        font-size: 14px;
+        border: none;
+    }
+    input[type=tel],
+    input[type=text] {
+        -webkit-tap-highlight-color: transparent;
+    }
+    input {
+        outline: 0;
+    }
+    input,
+    select,
+    textarea {
+        font-family: PingFangSC-Light, 'Helvetica Neue', Helvetica, sans-serif;
+    }
+ 
+    .address-modify .save-address {
+        padding: 10px 15px;
+    }
+    .address-modify .save-address a {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #fff !important;
+        font-size: 16px;
+        background: #da0000;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!-- 顶部导航--始 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-pull-left layout-back" id="aaa" href="javascript:void(0);"></a>
+                <h1 class="mui-title">收货人信息</h1>
+            </header>
+            <!-- 中间内容 -->
+            <div id="JS_address_modify_panel" class="viewport address-modify">
+                <form action="list.php" method="POST">
+                    <ul>
+                        <li>
+                            <div class="key">收货人姓名：</div>
+                            <div class="val">
+                                <input type="text" class="name" max-length="15" placeholder="请至少输入2个字符">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="key">收货人手机号：</div>
+                            <div class="val">
+                                <input type="text" class="phone" maxlength="11"
+                                    onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)"
+                                    placeholder="请输入11位手机号码">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="key">省、市、区：</div>
+                            <div class="val">
+                                <input type="text" class="provinceList" style="text-align: left;background: none;"
+                                    id="_JS_province_list_">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="key">详细地址：</div>
+                            <div class="val">
+                                <input class="address" placeholder="请至少输入5个字符" maxlength="60" _height="24"
+                                    style="height: 24px;">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="save-address"><a id="JS_save_address_btn" class="preserve" href="javascript:;">保存</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 尾页 -->
+    <div class="menu">
+        <a href="meilele-index.html" class="subMenu text-center">
+            <i class="iconfont icon-men"></i>
+            <div class="menu_name">首页</div>
+        </a>
+        <a href="sort.html" class="subMenu text-center">
+            <i class="iconfont icon-guizi"></i>
+            <div class="menu_name">分类</div>
+        </a>
+        <a href="shopping-car.html" class="subMenu text-center">
+            <i class="iconfont icon-gouwuche"></i>
+            <div class="menu_name">购物车</div>
+        </a>
+        <a href="my_meilele.html" class="subMenu text-center active">
+            <i class="iconfont icon-xiaolian"></i>
+            <div class="menu_name">我的</div>
+        </a>
+    </div>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Public.js"></script>
+    <script>
+        $(function () {
+            $(".preserve").click(function () {
+                if( $(".name").val()!=='' && $(".phone").val()!==''&& $(".provinceList").val()!==''&&$(".address").val()!=='') {
+                        $.ajax({
+                        type: 'GET',
+                        url: 'http://localhost/list.php',
+                        dataType: 'JSON',
+                        data: {
+                            name: $(".name").val(),
+                            phone: $(".phone").val(),
+                            city: $(".provinceList").val() + $(".address").val()
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+                                console.log(data[i]);
+                            }
+                        }
+                    })
+                    $(".name").val('')
+                    $(".phone").val('')
+                    $(".provinceList").val('')
+                    $(".address").val('')
+                }else{
+                    alert('请输入内容')
+                }
+            })
+        })
+    </script>
+</body>
+</html>

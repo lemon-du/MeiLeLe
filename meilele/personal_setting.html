@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/iconfont.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/my_meilele.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .user-setting {
+        margin-top: 10px;
+    }
+    .viewport {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2.6rem;
+    }
+    .user-setting ul {
+        border-top: solid 1px #d8d8d8;
+    }
+    .user-setting ul li:first-child {
+        border-top: none;
+    }
+    .user-setting ul li {
+        height: 44px;
+        line-height: 44px;
+        border-top: solid 1px #E5E5E5;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -o-box;
+        display: -ms-box;
+        padding-right: 15px;
+        background: #fff;
+    }
+    .user-setting ul li .key {
+        width: 50%;
+        font-size: 15px;
+        color: #333;
+    }
+    .user-setting ul li .key i.address {
+        background-position: 0 -16px;
+        height: 18px;
+    }
+    .user-setting ul li .key i.tel {
+        background-position: 0 -35px;
+        height: 18px;
+    }
+    .user-setting ul li .val {
+        width: 50%;
+        text-align: right;
+        font-size: 14px;
+        color: #b2b2b2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .user-setting ul li .key i {
+        background-image: url("https://image.meilele.com/wap/images/user/m-user-set.png");
+        background-size: 16px 137px;
+        background-position: 0 0;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 16px;
+        margin-left: 15px;
+    }
+    .user-setting ul li .arrow {
+        display: inline-block;
+        width: 8px;
+        height: 13px;
+        background-image: url("https://image.meilele.com/wap/images/user/m-user-ico.png");
+        background-position: -142px -13px;
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        position: relative;
+        top: 1px;
+        margin-left: 10px;
+    }
+    .user-setting ul li {
+        height: 44px;
+        line-height: 44px;
+        border-top: solid 1px #E5E5E5;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -o-box;
+        display: -ms-box;
+        padding-right: 15px;
+        background: #fff;
+    }
+    .user-setting ul li .key i.tel {
+        background-position: 0 -35px;
+        height: 18px;
+    }
+    .user-setting ul li .key i.password {
+        background-position: 0 -53px;
+        height: 19px;
+    }
+    .user-setting ul li .key i.deal {
+        background-position: 0 -72px;
+        height: 19px;
+    }
+    .user-setting ul li .key i.bank {
+        background-position: 0 -91px;
+        width: 17px;
+        height: 14px;
+    }
+    .user-setting .color-mobile {
+        color: #b2b2b2;
+        font-size: 14px;
+        font-weight: normal;
+    }
+    .user-setting ul li .key i.tickling {
+        background-position: 0 -105px;
+        width: 16px;
+        height: 16px;
+    }
+    .user-setting ul li .key i.down {
+        background-position: 0 -121px;
+        width: 16px;
+        height: 16px;
+    }
+    .user-setting .login-out {
+        padding: 15px 0;
+    }
+    .user-setting .login-out a {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        background: #fff;
+        color: #333;
+        font-size: 16px;
+        text-align: center;
+    }
+    .user-setting ul li .noset {
+        color: #ff8b00;
+    }
+</style>
+<body>
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!-- 顶部导航--始 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-pull-left layout-back" href="javascript:void(0);" id="aaa"></a>
+                <a id="menu" class="mui-action-menu mui-pull-right layout-nav" href="#topPopover"></a>
+                <h1 class="mui-title">个人设置</h1>
+                <div id="topPopover" class="mui-popover">
+                    <div class="arrows"></div>
+                    <ul class="nav-list">
+                        <li class="list_index">
+                            <a href="meilele-index.html">
+                                <em></em>
+                                商城首页
+                            </a>
+                        </li>
+                        <li class="list_category">
+                            <a href="sort.html">
+                                <em></em>
+                                分类搜索
+                            </a>
+                        </li>
+                        <li class="list_user">
+                            <a href="my_meilele.html">
+                                <em></em>
+                                个人中心
+                            </a>
+                        </li>
+                        <li class="list_expr">
+                            <a href="experience.html">
+                                <em></em>
+                                体验馆
+                            </a>
+                        </li>
+                        <li class="list_chat">
+                            <a href="javascript:void(0);" class="last">
+                                <em></em>
+                                咨询客服
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <!-- 中间内容 -->
+            <div class="viewport user-setting">
+                <ul>
+                    <li>
+                        <div class="key"><i></i>账户名</div>
+                        <div id="JS_user_name" class="val"></div>
+                    </li>
+                    <li id="JS_address_list">
+                        <div class="key"><i class="address"></i>收货地址</div>
+                        <div class="val"><a href="my_address.html"><span class="arrow"></span></a></div>
+                    </li>
+                    <li id="JS_add_moblie">
+                        <div class="key"><i class="tel"></i>绑定手机</div>
+                        <div class="val" id="val">
+                            <a href='login.html'><span class='arrow'></span></a>
+                        </div>
+                    </li>
+                    <li id="JS_add_password">
+                        <div class="key"><i class="password"></i>登录密码</div>
+                        <div class="val" id="password">
+                            <a href='login.html'><span class='arrow'></span></a>
+                        </div>
+                    </li>
+                    <li id="JS_add_dealpassword">
+                        <div class="key"><i class="deal"></i>交易密码</div>
+                        <div class="val noset">未设置<span class="arrow"></span></div>
+                    </li>
+                    <li id="JS_add_bank" style="border-bottom:none;">
+                        <div class="key" style="width:68%;"><i class="bank"></i>绑定银行卡<span
+                                class="color-mobile">（用于退款）</span></div>
+                        <div style="width:32%;" class="val noset">未设置<span class="arrow"></span></div>
+                    </li>
+                    <li id="JS_add_tickling" style="border-top:none;margin-top:10px;">
+                        <div class="key"><i class="tickling"></i>意见反馈</div>
+                        <div class="val"><span class="arrow"></span></div>
+                    </li>
+                    <li id="JS_add_down">
+                        <div class="key"><i class="down"></i>APP下载</div>
+                        <div class="val"><span class="arrow"></span></div>
+                    </li>
+                </ul>
+                <div class="login-out"><a id="JS_user_setting_logout" href="login.html">退出登录</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- 尾页 -->
+    <div class="menu">
+        <a href="meilele-index.html" class="subMenu text-center">
+            <i class="iconfont icon-men"></i>
+            <div class="menu_name">首页</div>
+        </a>
+        <a href="sort.html" class="subMenu text-center">
+            <i class="iconfont icon-guizi"></i>
+            <div class="menu_name">分类</div>
+        </a>
+        <a href="shopping-car.html" class="subMenu text-center">
+            <i class="iconfont icon-gouwuche"></i>
+            <div class="menu_name">购物车</div>
+        </a>
+        <a href="my_meilele.html" class="subMenu text-center active">
+            <i class="iconfont icon-xiaolian"></i>
+            <div class="menu_name">我的</div>
+        </a>
+    </div>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Public.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost/php/list3.php',
+                dataType: 'JSON',
+                success: function (data) {
+                    $("#val").html(data.phone + "<span class='arrow'></span>")
+                    $("#password").html(data.password + "<span class='arrow'></span>")
+                    $("#JS_user_name").html(data.phone)
+                    $("#JS_user_setting_logout").click(function () {
+                        $.ajax({
+                            type: 'GET',
+                            url: 'http://localhost/php/list4.php',
+                            dataType: 'JSON',
+                            data: {
+                                phone: $("#JS_user_name").text()
+                            }
+                        })
+                        $("#JS_user_name").text('')
+                        $("#val").text('').html('<a href="login.html"><span class="arrow"></span></a>')
+                        $("#password").text('').html('<a href="login.html"><span class="arrow"></span></a>')
+                        window.localStorage.removeItem("userStatus")
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+</html>

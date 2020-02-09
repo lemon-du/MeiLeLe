@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/yuemu-search.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="search-layer">
+        <div class="search-header">
+            <div class="search-container">
+                <i class="cancel"></i>
+                <div class="search-action">
+                    <form>
+                        <div class="search-input">
+                            <i class="clear" style="display:none;"></i>
+                            <i class="search-icon"></i>
+                            <input type="text" id="keyword" data-val="1" placeholder=" 黑胡桃 ">
+                        </div>
+                        <div class="do-search">搜索</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="his-hot">
+            <div id="history-container"></div>
+            <div class="hot-search">
+                <div class="title">
+                    <div class="word">大家都在搜</div>
+                </div>
+                <ul class="items">
+                    <a href="yuemu-search-detail.html?tag=Chinesepine">
+                        <li>松木</li>
+                    </a>
+                    <a href="yuemu-search-detail.html?tag=camphorwood">
+                        <li>樟木</li>
+                    </a>
+                    <a href="yuemu-search-detail.html?tag=oakwood">
+                        <li>橡木</li>
+                    </a>
+                    <a href="yuemu-search-detail.html?tag=balata">
+                        <li>橡胶木</li>
+                    </a>
+                    <a href="yuemu-search-detail.html?tag=furnitureMaterial">
+                        <li>家具材料</li>
+                    </a>
+                    <a href="yuemu-search-detail.html?tag=floorMaterial">
+                        <li>地板材料</li>
+                    </a>
+                    <a href="yuemu-search-detail.html?tag=processMaterial">
+                        <li>木工艺品</li>
+                    </a>
+                    <a href="yuemu-search-detail.html?tag=other">
+                        <li>其他用材</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/changeSize.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/yuemu-search.js"></script>
+</body>
+</html>

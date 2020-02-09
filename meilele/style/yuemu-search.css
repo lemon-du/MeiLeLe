@@ -1,0 +1,106 @@
+#search-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+}
+#search-layer .search-header {
+    padding: .4rem .75rem;
+}
+#search-layer .search-header .search-container {
+    position: relative;
+}
+#search-layer .search-header .cancel {
+    position: absolute;
+    width: .45rem;
+    height: .85rem;
+    top: .2rem;
+    left: 0;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAiBAMAAACgmpTJAAAAGFBMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmYM/R1dAAAAB3RSTlMAAqi2lowDl0PM/QAAADRJREFUGNNjgAFXGIOpCMZSN4QJFQtQKMQIFxIiTYjBHSiEYCGMRVhFf8EEuKAZZqgxuAIAy1oPAWxLkG0AAAAASUVORK5CYII=) no-repeat center center;
+    background-size: contain;
+}
+#search-layer .search-header .search-action {
+    width: 13.3rem;
+    margin-left: auto;
+    overflow: hidden;
+}
+#search-layer .search-header .search-action .search-input {
+    float: left;
+    position: relative;
+    width: 11.2rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 1.25rem;
+    background: #eee;
+    padding-left: 1.35rem;
+    border-radius: .3rem;
+}
+#search-layer .search-header .search-action .search-input .clear {
+    display: block;
+    position: absolute;
+    width: .55rem;
+    height: .55rem;
+    top: .35rem;
+    right: .35rem;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWBAMAAAA2mnEIAAAAElBMVEUAAAC7u7u7u7u7u7u7u7u7u7u4R+2wAAAABXRSTlMAsJBWVdXqr3IAAABTSURBVBjTY3BigAEVBlUBKJMxiIExEMoWFQBhiHAgmIAKQ0ioCJiCCYBpMB8qARaGSggChWESoQKYbIQahF4MMxF2IdyA5jaEm5H9guJHI7iNygAz1goImcKqMwAAAABJRU5ErkJggg==) no-repeat 0 0;
+    background-size: contain;
+}
+#search-layer .search-header .search-action .search-input .search-icon {
+    display: block;
+    position: absolute;
+    width: .575rem;
+    height: .575rem;
+    top: .35rem;
+    left: .5rem;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAMhaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjUtYzAxNCA3OS4xNTE0ODEsIDIwMTMvMDMvMTMtMTI6MDk6MTUgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTk1NUYwMTc4QkNCMTFFODkyOEE5QjYxMzU2Rjg0RDMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTk1NUYwMTg4QkNCMTFFODkyOEE5QjYxMzU2Rjg0RDMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5OTU1RjAxNThCQ0IxMUU4OTI4QTlCNjEzNTZGODREMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5OTU1RjAxNjhCQ0IxMUU4OTI4QTlCNjEzNTZGODREMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqTmUlsAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAdVBMVEVMaXGampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamprRdHxSAAAAJnRSTlMAa88L+/e+AgSwCjgXFEGmnfVSUGzclZoDwFGX884B6a2v+UCSlCnZ8LIAAACvSURBVCjPfVFZFoIwDAzQkrLJKgKCu3P/IyqL0D6B/EzeTJImU6I+VPDq2u4dKDKiSTFGmmksxxBFyMRhIRDzzCeo/Sn1ayQ/Ooe71LCLfMyUFI421BFyfPwJy9jBwmHAMyKDj3Aa0AYbPOM4YAvzFgJ267fmHzb22dr/795m8ced/XEhK9PP6uunJfCAt3RncvJfZsrTBRWUdmqX/X+xIeiH7Qg3WhXu19UGogt9ANP2DXFgTGeaAAAAAElFTkSuQmCC) no-repeat 0 0;
+    background-size: contain;
+}
+#search-layer .search-header .search-action .search-input input {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    width: 8.85rem;
+    font-size: .65rem;
+    color: #333;
+    margin-top: .15rem;
+    height: .95rem;
+    line-height: .95rem;
+    background: #eee;
+}
+#search-layer .search-header .search-action .do-search {
+    float: right;
+    color: #b6874f;
+    font-size: .7rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+}
+#search-layer .his-hot {
+    padding: 0 .75rem;
+    color: #333;
+}
+#search-layer .his-hot .hot-search .title {
+    position: relative;
+    overflow: hidden;
+}
+#search-layer .his-hot .hot-search .title .word {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: .7rem;
+}
+#search-layer .his-hot .hot-search .items {
+    overflow: hidden;
+}
+#search-layer .his-hot .hot-search .items li {
+    float: left;
+    margin-right: .65rem;
+    margin-top: .3rem;
+    padding: .25rem .6rem;
+    font-size: .55rem;
+    border: .025rem solid #ddd;
+    border-radius: .2rem;
+    color: #333;
+}

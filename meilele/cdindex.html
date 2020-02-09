@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/app.css">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/swiper.min.css">
+    <link rel="stylesheet" href="style/cdindex.css">
+    <link rel="stylesheet" href="style/back-top.css">
+</head>
+<body>
+    <div class="m-header">
+        <span id="back"></span>
+        <div class="search_from">
+            <p class="search_input">搜索商品</p>
+        </div>
+        <div class="nav-logo">
+            <a id="menu"  href="#topPopover"></a>
+        </div>
+        <div id="topPopover" class="mui-popover" id="offCanvasHide">
+            <div class="arrows"></div>
+            <ul class="nav-list">
+                <li class="list_index">
+                    <a href="meilele-index.html">
+                        <em></em>
+                        商城首页
+                    </a>
+                </li>
+                <li class="list_category">
+                    <a href="sort.html">
+                        <em></em>
+                        分类搜索
+                    </a>
+                </li>
+                <li class="list_user">
+                    <a href="my_meilele.html">
+                        <em></em>
+                        个人中心
+                    </a>
+                </li>
+                <li class="list_expr">
+                    <a href="experience.html">
+                        <em></em>
+                        体验馆
+                    </a>
+                </li>
+                <li class="list_chat">
+                    <a href="javascript:void(0);" class="last">
+                        <em></em>
+                        咨询客服
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <nav class="swiper-container navs banner1">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide list-item">
+                <a href="javascript:void(0);" style="color: #000;">推荐</a>
+            </li>
+            <li class="swiper-slide list-item">
+                <a href="category.html?trrj">天然乳胶</a>
+            </li>
+            <li class="swiper-slide list-item">
+                <a href="category.html?dlth">独立弹簧</a>
+            </li>
+            <li class="swiper-slide list-item">
+                <a href="category.html?hbyz">环保椰棕</a>
+            </li>
+            <li class="swiper-slide list-item">
+                <a href="category.html?etcd">儿童床垫</a>
+            </li>
+            <li class="swiper-slide list-item">
+                <a href="category.html?3dcd">3D床垫</a>
+            </li>
+            <li class="swiper-slide list-item">
+                <a href="category.html?hmcd">海绵床垫</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="mattress">
+        <div class="top-banner">
+            <div class="swiper-container banner2">
+                <div class="swiper-wrapper top-mattress">
+                    <div class='swiper-slide'>
+                        <a href="detail.html?id=health">
+                            <img src='https://image.meilele.com//images/201907/1563495282734348107.jpg'>
+                        </a>
+                    </div>
+                    <div class='swiper-slide'>
+                        <a href="detail.html?id=health">
+                            <img src='https://image.meilele.com//images/201907/1563495282734348107.jpg'>
+                        </a>
+                    </div>
+                    <div class='swiper-slide'>
+                        <a href="detail.html?id=health">
+                            <img src='https://image.meilele.com//images/201907/1563495282734348107.jpg'>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="activity">
+            <h3 class="activity-tit">
+                <img src="https://img003.mll3321.com//images/201811/1542576790454544629.jpg" alt="">
+                <a href="category.html?dlth" class="more">更多</a>
+            </h3>
+            <div class="activity-list">
+                <div class="top-img" id="top-img"></div>
+                <ul class="activity-lists" id="activity-lists"></ul>
+            </div>
+        </div>
+        <div class="service-container">
+            <div class="service-container-left">
+                <div class="tit">挑得好床垫 才有好睡眠</div>
+                <div class="contain-img">
+                    <img src="img/cd.png" alt="">
+                </div>
+                <div class="city">成都家</div>
+                <div class="allcity">全国93家体验馆</div>
+            </div>
+            <div class="service-container-right">
+                <div class="saler-info">
+                    <div class="left-word">
+                        <div class="name">顾问:</div>
+                        <div class="score">专业评分:5.0</div>
+                    </div>
+                </div>
+                <div class="address">
+                    <span class="tab">[切换]</span>
+                </div>
+                <div class="distance">距您</div>
+                <div class="getPhone">
+                    <form action="" style="width: auto;">
+                        <div class="contain-input">
+                            <input type="text" placeholder="手机仅用于预约顾问" maxlength="11">
+                        </div>
+                    </form>
+                    <div class="btn">获取门店地址</div>
+                </div>
+            </div>
+        </div>
+        <div id="hot" class="activity">
+            <h3 class="activity-tit">
+                <img src="https://img002.mll3321.com//images/201810/1539309906609346578.jpg" alt="">
+                <a href="category.html?dlth" class="more">更多</a>
+            </h3>
+            <div class="activity-list hot-list">
+                <div class="top-img " id="top1-img"></div>
+                <ul class="activity-lists hot-lists"></ul>
+            </div>
+        </div>
+        <div class="hot-choice">
+            <h3 class="activity-tit">
+                <img src="https://img003.mll3321.com//images/201809/1536603699411679288.jpg" alt="">
+            </h3>
+            <div class="hot-choiceStyle">
+                <ul class="choiceStyle-lists">
+                    <li>
+                        <a href="category.html?dlth">
+                            <img src="https://img001.mll3321.com/images/upload/201809/336a5351c68de48fd7b7254187f079bc.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="category.html?dlth">
+                            <img src="https://img004.mll3321.com/images/upload/201809/1305f5d04427fca9d1bef590fd7114a2.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="category.html?dlth">
+                            <img src="https://img002.mll3321.com/images/upload/201809/04400979646aedc28f0149be6d424d71.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="category.html?dlth">
+                            <img src="https://image.meilele.com/images/upload/201809/c6e94a0f6e967469c6fd02ca99a0fdf1.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="category.html?dlth">
+                            <img src="https://img002.mll3321.com/images/upload/201809/5ba7d0f3f3b04b6967bd6e244e335e9d.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cdlist.html?dlth">
+                            <img src="https://img004.mll3321.com/images/upload/201809/1e9ef4a062b3c6f5cae80fc3fa26bfc7.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="category.html?3dcd">
+                            <img src="https://img004.mll3321.com/images/upload/201809/71c1ca0888b9edb93a2cdfba96d7a856.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="category.html?3dcd">
+                            <img src="https://img003.mll3321.com/images/upload/201809/d539b5380b3a69e1ad532136c48c1179.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="category.html?3dcd">
+                            <img src="https://img001.mll3321.com/images/upload/201809/8bcfc490ba53458242d41e6b235975d0.jpg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="newProduct">
+            <h3 class="activity-tit">
+                <img src="https://img001.mll3321.com//images/201810/1540505734749647830.jpg" alt="">
+                <a href="category.html?hmcd" class="more">更多</a>
+            </h3>
+            <div class="newProduct-list activity-list">
+                <div class="top-img" id="top2-img"></div>
+                <ul class="activity-lists" id="newProduct-lists" style="margin-bottom: 1rem;"></ul>
+                <div class="color-swiper">
+                    <div class="swiper-container banner3">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="category.html?etcd">
+                                    <img src="https://img002.mll3321.com//images/upload/201809/65bcec957dc0635c679461d3945f0391.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="category.html?etcd">
+                                    <img src="https://img002.mll3321.com//images/upload/201809/6b957349eaa3ee0033302a74bbfeb10d.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="category.html?etcd">
+                                    <img src="https://img002.mll3321.com//images/upload/201809/e59ae6632a49feef5fdbbbd91b9007a1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="category.html?etcd">
+                                    <img src="https://img003.mll3321.com//images/upload/201809/5e2d9f5517f083c30118855f65958450.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="category.html?etcd">
+                                    <img src="https://img001.mll3321.com//images/upload/201809/b9b07524a391e77198d8ea0d2209446b.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nowIntro">
+                <h3 class="activity-tit">
+                    <img src="https://img003.mll3321.com//images/201810/1539310093357649700.jpg" alt="">
+                    <a href="category.html?hmcd" class="more">更多</a>
+                </h3>
+                <div class="nowIntro-list activity-list">
+                    <div class="top-img" id="top3-img"></div>
+                    <ul class="activity-lists" id="nowIntro-lists"></ul>
+                </div>
+        </div>
+        <div class="brand-floor">
+            <h3 class="activity-tit">
+                <img src="https://img001.mll3321.com//images/201808/1535411781843244084.jpg" alt="">
+            </h3>
+            <div class="brand">
+                <ul>
+                    <li class="brand-item">
+                        <a href="javascript:void(0);">
+                            <img src="https://image.meilele.com///images/upload/201809/1f59e291669a72dbf33a4e62accbe914.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="brand-item">
+                        <a href="javascript:void(0);">
+                            <img src="https://img004.mll3321.com///images/upload/201809/579af2f47a4fca9aa7fa138373216ce9.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="brand-item">
+                        <a href="javascript:void(0);">
+                            <img src="https://image.meilele.com///images/upload/201809/bccc72a27a40516c6ff2107c6e9ac839.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="brand-item">
+                        <a href="javascript:void(0);">
+                            <img src="https://img004.mll3321.com///images/upload/201809/dc8b4e18b874488503bd47ac751f3484.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="brand-item">
+                        <a href="javascript:void(0);">
+                            <img src="https://img003.mll3321.com///images/upload/201809/1e53ec0a0fee13ea4dcb9db39e36bfa0.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="brand-item">
+                        <a href="javascript:void(0);">
+                            <img src="https://img001.mll3321.com///images/upload/201809/f53a3dedcb4eab7f8851562720f71adb.jpg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hasSaled-bottom">
+        <a href="">
+            <img src="https://img001.mll3321.com//images/201808/1535397552584674206.jpg" alt="" width="100%" height="auto">
+        </a>
+    </div>
+    <footer class="mll-footer">
+        <div class="records">
+            <div class="img-btn">
+                <img src="https://static.mll3321.com/wap/common/i/ft-logo-q.png" alt="">
+                <div class="btn">
+                    <a href="">电脑版</a>
+                </div>
+            </div>
+            <p class="p1">深圳象限家居设计有限公司 版权所有</p>
+            <p class="p2">粤公网安备44030602000294号</p>
+        </div>
+        <div class="qrcode">
+            <div class="qrcode-img">
+                <img src="https://static.mll3321.com/wap/common/i/ft-qrcode.png" alt="">
+            </div>
+            <div class="qrcode-txt">有赞商城</div>
+        </div>
+    </footer>
+    <!-- 回到顶部 -->
+    <ul class="sidebar-btn">
+        <li class="back-top hidden"></li>
+    </ul>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/back-top.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/changeSize.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/cdindex.js"></script>
+</body>
+</html>

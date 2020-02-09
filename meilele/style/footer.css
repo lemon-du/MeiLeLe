@@ -1,0 +1,56 @@
+/* 底部 */
+.mll-footer {
+    box-sizing: border-box;
+    width: 100%;
+    padding: .875rem 1.5rem .825rem 1.25rem;
+    background: #414141;
+    overflow: hidden;
+}
+.mll-footer .records {
+    float: left;
+}
+.mll-footer .records .img-btn {
+    overflow: hidden;
+    margin-bottom: .4rem;
+}
+.mll-footer .records .img-btn img {
+    width: 4.15rem;
+    height: 1.1rem;
+    float: left;
+}
+.mll-footer .records .img-btn .btn {
+    width: 3.6rem;
+    padding: .275rem 0;
+    line-height: 1;
+    font-size: .5rem;
+    text-align: center;
+    border: .05rem solid #6d6d6d;
+    border-radius: .15rem;
+    margin: .075rem 0 0 .4rem;
+    float: left;
+}
+.mll-footer .records .img-btn .btn a {
+    color: #fff;
+}
+.mll-footer .records .p1,.records .p2 {
+    color: #aaa;
+    font-size: .45rem;
+    line-height: 1;
+    margin-bottom: .15rem;
+}
+.mll-footer .qrcode {
+    float: right;
+    margin: .075rem 1rem 0 0;
+}
+.mll-footer .qrcode-img img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: .15rem;
+}
+.mll-footer .qrcode .qrcode-txt {
+    color: #aaa;
+    font-size: .55rem;
+    margin-top: .25rem;
+    line-height: 1;
+    text-align: center;
+}

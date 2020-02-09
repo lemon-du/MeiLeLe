@@ -1,0 +1,69 @@
+element.style {
+    width: 100%;
+}
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll {
+    width: 100%;
+}
+.mui-slider {
+    width: 100%;
+    top: 2.05rem;
+    background: #fff;
+}
+.mui-slider-indicator.mui-segmented-control {
+    height: 2.3rem;
+    border-top: 1px solid #d8d8d8;
+}
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+    width: 33.33%;
+    height: 2.3rem;
+    font-size: 0.7rem;
+    line-height: 2.3rem;
+}
+element.style {
+    transform: translate3d(0px, 0px, 0px) translateZ(0px);
+    background: #efeff4;
+}
+.mui-ios .mui-table-view-cell {
+    background: #efeff4;
+    height: 2.5rem;
+}
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+    border-top: 1px solid #c8c7cc;
+    border-bottom: 1px solid #efeff4;
+}
+.mui-ios .mui-table-view-cell {
+    height: 22rem;
+}
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+    color: #da0000;
+    border-bottom: 3px solid #da0000 !important;
+    background: 0 0;
+}
+a {
+    text-decoration: none !important;
+}
+.mui-table-view-cell .viewport .no-bouns img {
+    width: 4.8rem;
+    height: 4.8rem;
+}
+.no-bouns {
+    padding: 5rem 0;
+    margin: auto;
+    text-align: center;
+}
+.mui-table-view-cell .viewport .no-bouns h4 {
+    color: #999;
+    margin-top: 1rem;
+}
+.go-on {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    background-color: #da0000;
+    border-radius: 3px;
+    margin-top: 20px;
+    padding: 0 25px;
+}

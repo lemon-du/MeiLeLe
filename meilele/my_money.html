@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/iconfont.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/my_meilele.css">
+    <link rel="stylesheet" href="style/my_money_coins.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!-- 顶部导航--始 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-pull-left layout-back" href="javascript:void(0);" id="aaa"></a>
+                <a id="menu" class="mui-action-menu mui-pull-right layout-nav" href="#topPopover"></a>
+                <h1 class="mui-title">我的乐币</h1>
+                <div id="topPopover" class="mui-popover">
+                    <div class="arrows"></div>
+                    <ul class="nav-list">
+                        <li class="list_index">
+                            <a href="meilele-index.html">
+                                <em></em>
+                                商城首页
+                            </a>
+                        </li>
+                        <li class="list_category">
+                            <a href="sort.html">
+                                <em></em>
+                                分类搜索
+                            </a>
+                        </li>
+                        <li class="list_user">
+                            <a href="my_meilele.html">
+                                <em></em>
+                                个人中心
+                            </a>
+                        </li>
+                        <li class="list_expr">
+                            <a href="experience.html">
+                                <em></em>
+                                体验馆
+                            </a>
+                        </li>
+                        <li class="list_chat">
+                            <a href="javascript:void(0);" class="last">
+                                <em></em>
+                                咨询客服
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <!-- 中间内容 -->
+            <div class="viewport">
+                <div class="leCoin">
+                    <div class="leHeader">
+                        <p class="leHeaderExplain"><a href="#">说明</a></p>
+                        <p class="leHeaderP1">可用乐币：</p>
+                        <p class="leHeaderCoin"><span>0</span>个</p>
+                    </div>
+                    <div class="leConnBox">
+                        <p class="leconnTitle">收支明细</p>
+                    </div>
+                    <div class="isNone">
+                        <div class="isNone_a">
+                            暂无乐币记录</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 尾页 -->
+    <div class="menu">
+        <a href="meilele-index.html" class="subMenu text-center">
+            <i class="iconfont icon-men"></i>
+            <div class="menu_name">首页</div>
+        </a>
+        <a href="sort.html" class="subMenu text-center">
+            <i class="iconfont icon-guizi"></i>
+            <div class="menu_name">分类</div>
+        </a>
+        <a href="shopping-car.html" class="subMenu text-center">
+            <i class="iconfont icon-gouwuche"></i>
+            <div class="menu_name">购物车</div>
+        </a>
+        <a href="my_meilele.html" class="subMenu text-center active">
+            <i class="iconfont icon-xiaolian"></i>
+            <div class="menu_name">我的</div>
+        </a>
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Public.js"></script>
+</body>
+</html>

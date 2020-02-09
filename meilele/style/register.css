@@ -1,0 +1,352 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size:100px ;
+    background: #f5f5f5;
+}
+.mine {
+    width: 100%;
+    height: 100%;
+    /* overflow-x: hidden; */
+    -webkit-overflow-scrolling: touch;
+    background-color: #f5f5f5;
+    font-size: 13px;
+    color: #666;
+    font-family: 'PingFangSC-Light','Helvetica Neue',Helvetica,sans-serif;
+}
+ul{
+    list-style: none;
+}
+.register {
+    border-top: solid 1px #d8d8d8;
+    background: #fff;
+    border-width: 1px 0;
+}
+.register1 {
+    margin-top: 10px;
+}
+.register ul {
+    padding-left: 39px;
+    border-bottom: solid 1px #d8d8d8;
+}
+.user-icon {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url('https://image.meilele.com/wap/images/user/_icons/user_icon.png') no-repeat;
+    background-size: 100% 1000%;
+    position: absolute;
+    left: -33px;
+    top: 14px;
+}
+.user-icon1 {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url('https://image.meilele.com/wap/images/user/_icons/user_icon.png') no-repeat;
+    background-size: 100% 1000%;
+    position: absolute;
+    left: 9px;
+    top: 12px;
+}
+.phone-icon {
+    background-position: 0px -88px;
+}
+.captcha-icon {
+    background-position: 0px -44px;
+}
+.note-icon {
+    background-position: 0px -65px;
+}
+.portrait-icon {
+    background-position: 0px 0px;
+}
+.password-icon {
+    background-position: 0px -23px;
+}
+.back {
+    position: relative;
+    height: 0.98rem;
+    display: flex;
+    justify-content: space-between;
+}
+.back1 {
+    background: #fff;
+    border-bottom: 1px solid #d8d8d8 ;
+}
+.layout-back {
+    display: inline-block;
+    /* position: absolute; */
+    width: 1rem;
+    height: 100%;
+    /* top: 0.1rem; */
+    /* left: 0.1rem; */
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAgBAMAAAAGZY7BAAAAHlBMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmbpCqcMAAAACXRSTlMAz9gZExTEvRqug+rCAAAANklEQVQY02OAArcCKINFUgDKcpxkABNSJk+IFS4USJoQQyZQCMFCGAuzim6CGgjBBkQIIUINALR+FJFGdhu2AAAAAElFTkSuQmCC) no-repeat center;
+    background-size: .2rem .4rem;
+}
+.logo {
+    height: 100px;
+    text-align: center;
+    line-height: 77px;
+}
+.logo img{
+    height: 50px;
+}
+.viewport a {
+    width: 100%;
+    height: 44px;
+    margin: 0px 35px;
+    color: #333;
+    font-weight: bold;
+    line-height: 44px;
+    text-decoration: none;
+}
+.viewport {
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+}
+.register ul li {
+    height: 48px;
+    border-top: solid 1px #d8d8d8;
+    border-width: 1px 0 0 0;
+    position: relative;
+}
+.register ul li:first-child {
+    border-top: 0;
+}
+.register ul li input {
+    position: absolute;
+    width: 100%;
+    height: 47px;
+    padding: 10px 0 !important; 
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    font-family: 'Microsoft Yahei','Helvetica Neue',Helvetica,'STHeiTi',Arial,sans-serif;
+}
+.user-del {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 9px;
+    left: auto;
+    background: url('https://image.meilele.com/wap/images/user/_icons/user_icon.png') no-repeat;
+    background-size: 74%;
+    background-position: 0px -128px;
+}
+.user-del1 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    background: url('https://image.meilele.com/wap/images/user/_icons/user_icon.png') no-repeat;
+    background-size: 74%;
+    background-position: 0px -128px;
+}
+.del-icon {
+    right: 20px;
+    display: none;
+}
+.del-icon1 {
+    right: 115px;
+    display: none;
+}
+.del-icon2 {
+    right: 115px;
+    display: none;
+}
+.del-icon3 {
+    right: 20px;
+    display: none;
+}
+.del-icon4 {
+    right: 30px;
+    display: none;
+}
+.captcha {
+    width: 111px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-left: solid 1px #d8d8d8;
+    border-width: 0 0 0 1px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.captcha img{
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    height: 48px;
+}
+.note, .p-note{
+    color: #999;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    line-height: 47px;
+}
+.login-button,.login-button1 {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    /* background: #da0000; */
+    border-radius: 5px;
+    background: #ccc;
+    text-decoration: none;
+    width: 6.799rem;
+    margin: auto;
+}
+.login-options,.login-options1 {
+    padding: 15px;
+    background: #f5f5f5f5;
+}
+.about-register, .about-register1 {
+    font-size: 14px;
+    color: #999;
+    overflow: hidden;
+    height: 32px;
+    line-height: 32px;
+    padding-top: 3px;
+}
+.about-register a,.about-register1 a{
+    float: right;
+    color: #999;
+    text-decoration: none;
+}
+.light {
+    border-bottom: 1px solid #da0000;
+    color: #da0000 !important;
+}
+.password-login,.login-options1 {
+    display: none;
+    background-color: #f5f5f5;
+}
+.user-title {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    font-family: PingFangSC-Semibold;
+    font-size: .375rem;
+    color: #333;
+    overflow: hidden;
+}
+.mui-input-clear,.mui-input-password{
+    padding-left: 39px!important;
+    height: 47px !important;
+    margin-bottom: 0px !important;
+    border-top: 0px !important;
+    font-size: 16px;
+}
+.mui-input-group .mui-input-row {
+    height: 47px !important;
+}
+.mui-popup-title{
+    display: none;
+}
+.mui-toast-container {
+    bottom: 45% !important;			
+}
+.mui-toast-message {
+opacity: 0.9;
+color: #fff;
+width: 200px;
+padding: 80px 5px 10px 5px;
+}
+.note-color {
+    color:#da0000;
+    font-weight: normal;
+}
+canvas{
+    display: inline-block; 
+    vertical-align: baseline;
+    width: 110px !important;	
+    height: 48px !important;	
+}
+.inp-phone1,.inp-password {
+    font-family: 'Microsoft Yahei','Helvetica Neue',Helvetica,'STHeiTi',Arial,sans-serif;
+}
+nav {
+    width: 100%;
+    height: 65px;
+}
+.current {
+    color: #da0000;
+}
+.current .role {
+    background-color: #da0000;
+}
+nav .user-top-step .step-li:first-child .line-b {
+    width: 50%;
+    left: auto;
+    right: 0;
+    background-color: #da0000;
+}
+.role {
+    font-style: normal;
+    font-family: Arial;
+    color: #fff;
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #b3b3b3;
+    line-height: 18px;
+    margin: 12px auto 3px auto;
+    font-size: 12px;
+    position: relative;
+    z-index: 4;
+}
+nav .user-top-step .step-li .line-b {
+    position: absolute;
+    border-top: 2px solid #b3b3b3;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    top: 32%;
+    margin-top: -1px;
+    left: 0;
+    transform: scaleY(0.5);
+    display: block;
+    content: ".";
+    z-index: 3;
+}
+ nav .user-top-step .step-li {
+    float: left;
+    height: 65px;
+    position: relative;
+    width: 33.33333333%;
+    /* color: #777; */
+    text-align: center;
+    overflow: hidden;
+}
+ nav .user-top-step .step-li:last-child .line-b {
+    width: 50%;
+}
+.pass-hide {
+    display: none;
+}
+.pl2 {
+    display: none;
+}
+.pl3{
+    display: none;
+}
+.p-left {
+    margin-left: 39px;
+}

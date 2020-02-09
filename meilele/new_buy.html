@@ -1,0 +1,2810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/mui.picker.min.css">
+    <link rel="stylesheet" href="style/swiper.min.css">
+    <link rel="stylesheet" href="style/idangerous.swiper.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        height: 100%;
+        overflow-x: hidden;
+        background-color: #f5f5f5;
+        font-size: 13px;
+        color: #666;
+        font-family: PingFangSC-Light, 'Helvetica Neue', Helvetica, sans-serif;
+    }
+
+    a {
+        color: #333;
+        text-decoration: none;
+        outline: 0;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    ul li {
+        list-style: none;
+
+
+    }
+
+    .mob-header {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        height: 1.85rem;
+        overflow: hidden;
+        background: #fff;
+        text-align: center;
+        padding: .35rem .5rem .35rem .75rem;
+    }
+
+    .mob-header .header-left-icon {
+        float: left;
+        width: .875rem;
+        height: .975rem;
+        margin-top: .1rem;
+        background: url(img/head_nav.png) no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .mob-header .title {
+        float: left;
+        margin-left: 5.15rem;
+        font-size: .8rem;
+        color: #333;
+        line-height: 1.15rem;
+    }
+
+    .PF-Regular {
+        font-family: PingFangSC-Regular;
+    }
+
+    .Right {
+        float: right;
+    }
+
+    .mob-header .search-cart .search {
+        width: 1.15rem;
+        height: 1.15rem;
+        margin-right: .75rem;
+        background: url(img/search.png) no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .mob-header .search-cart a {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .mob-header .search-cart .cart {
+        width: 1.15rem;
+        height: 1.15rem;
+        background: url(img/cart.png) no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .mui-scroll {
+        border-top: 1px solid #eee !important;
+        background-color: #fff !important;
+    }
+
+
+    .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+        color: #000 !important;
+        border-bottom: 2px solid #000 !important;
+        background: 0 0;
+        line-height: 1.575rem !important;
+        font-size: .6rem !important;
+    }
+
+    .mui-segmented-control .mui-control-item {
+        line-height: 35px !important;
+        font-size: .7rem !important;
+    }
+
+    .mui-slider-indicator {
+        text-align: center !important;
+    }
+
+    .mui-slider-indicator .mui-indicator {
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        border-radius: 0 !important;
+        background: #aaa;
+    }
+
+    .mob-index-house-kit {
+        margin-bottom: .75rem;
+    }
+
+    .mob-index-house-kit h3 {
+        text-align: center;
+        font-weight: bolder;
+        padding-top: 1.3rem;
+        margin-bottom: 0 !important;
+        background: #fff;
+    }
+
+    .mob-index-house-kit h3 i {
+        display: inline-block;
+        vertical-align: middle;
+        width: .85rem;
+        height: .85rem;
+        margin-right: .25rem;
+        background: url(img/Pentastar.png) no-repeat center center;
+        background-size: 100%;
+    }
+
+    .mob-index-house-kit h3 a {
+        display: inline-block;
+        vertical-align: middle;
+        color: #333;
+        font-size: .7rem;
+    }
+
+    .PF-Semibold {
+        font-family: PingFangSC-Semibold;
+    }
+
+    .mob-index-house-kit .house-kit-content .house-kit-tab {
+        background: #fff;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: .9rem .9rem 5.75rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .house-kit-tab .tab-item {
+        flex: 1;
+        text-align: center;
+        line-height: 1;
+        font-size: .6rem;
+        color: #666;
+    }
+
+    .mob-index-house-kit .house-kit-content .house-kit-tab .tab-item.active span {
+        border-bottom: 1px solid #333;
+        color: #333;
+        font-weight: bolder;
+        font-family: PingFangSC-Semibold;
+    }
+
+    .mob-index-house-kit .house-kit-content .house-kit-tab .tab-item span {
+        display: inline-block;
+        padding-bottom: .3rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .house-kit-tab .tab-item {
+        flex: 1;
+        text-align: center;
+        line-height: 1;
+        font-size: .6rem;
+        color: #666;
+    }
+
+    .mob-index-house-kit .house-kit-content .container {
+        padding: 0 .75rem;
+        margin-top: -5.15rem;
+    }
+
+    .swiper-container {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        display: flex;
+        transform-style: preserve-3d;
+        box-sizing: content-box;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content {
+        background: #fff;
+    }
+
+    .swiper-slide {
+        transform-style: preserve-3d;
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .kit-img {
+        margin-bottom: .25rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .kit-img img {
+        width: 100%;
+        height: 9.5rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .product-list .swiper-slide {
+        width: 4.75rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .product-list .product-item {
+        margin-left: .25rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .product-list .product-item .pic {
+        margin-bottom: .3rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .product-list .product-item .pic img {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .product-list .product-item .word {
+        text-align: center;
+        font-size: .6rem;
+        line-height: 1;
+        color: #333;
+    }
+
+    .theme-container .floors-container .floor .product-pic img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .info {
+        overflow: hidden;
+        padding: 1.25rem .75rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .info .word {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        height: 1.5rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .info .word .up {
+        font-size: .6rem;
+        line-height: 1;
+        color: #333;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .info .word .up .RMB {
+        margin: 0 .15rem;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .info .word .up span {
+        color: #c81c28;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .info .word .up span {
+        color: #c81c28;
+    }
+
+    .Right {
+        float: right;
+    }
+
+    .mob-index-house-kit .house-kit-content .product-content .info .btn {
+        float: left;
+        padding: .45rem .55rem;
+        font-size: .6rem;
+        line-height: 1;
+        color: #fff;
+        background: #ff7849;
+        border-radius: .15rem;
+    }
+
+    .theme-container {
+        margin-bottom: .25rem;
+    }
+
+    .theme-container .big-floors-nav {
+        width: 16rem;
+        margin: 0 auto;
+        background: #444;
+    }
+
+    .swiper-container {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .swiper-container-free-mode>.swiper-wrapper {
+        margin: 0 auto;
+    }
+
+    .theme-container .big-floors-nav .swiper-slide {
+        width: 5.55rem;
+        border: 0;
+    }
+
+    .theme-container .big-floors-nav .nav-item.active {
+        background: #ff7849;
+    }
+
+    .theme-container .big-floors-nav .nav-item {
+        padding: .8rem 0 .75rem;
+        font-size: .6rem;
+        line-height: 1;
+        border: 0;
+    }
+
+    .theme-container .big-floors-nav .nav-item.active .border {
+        border-right: 0;
+    }
+
+    .theme-container .big-floors-nav .nav-item.active a {
+        color: #fff;
+    }
+
+    .theme-container .big-floors-nav .nav-item a {
+        display: block;
+        color: #ddd;
+    }
+
+    .theme-container .big-floors-nav .nav-item a .month {
+        font-size: .85rem;
+        width: 4rem;
+        margin-bottom: .25rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .theme-container .big-floors-nav .nav-item a .xl {
+        font-size: .6rem;
+        line-height: .65rem;
+        width: 4.1rem;
+        margin-bottom: .45rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .theme-container .big-floors-nav .nav-item a .bar {
+        width: .6rem;
+        height: .05rem;
+        background: #fff;
+    }
+
+    .theme-container .big-floors-nav .swiper-slide {
+        width: 5.55rem;
+        border: 0;
+    }
+
+    .theme-container .big-floors-nav .nav-item {
+        padding: .8rem 0 .75rem;
+        font-size: .6rem;
+        line-height: 1;
+        border: 0;
+    }
+
+    .PF-Regular {
+        font-family: PingFangSC-Regular;
+    }
+
+    .theme-container .big-floors-nav .nav-item .border {
+        padding: 0 .75rem;
+        border-right: .05rem solid #333;
+    }
+    .theme-container .floors-nav {
+        width: 16rem;
+        margin: 0 auto;
+        background: #444;
+        opacity: 0;
+        height: 0;
+    }
+    .swiper-container {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .swiper-container-free-mode>.swiper-wrapper {
+        margin: 0 auto;
+    }
+    .theme-container .floors-nav .swiper-slide {
+        width: 5.4rem;
+        border: 0;
+    }
+    .theme-container .floors-nav .nav-item.active {
+        background: #ff7849;
+    }
+    .theme-container .floors-nav .nav-item {
+        padding: .55rem 0;
+        height: .7rem;
+        line-height: .7rem;
+        font-size: .6rem;
+        text-align: center;
+        border: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .theme-container .floors-nav .nav-item.active a {
+        color: #fff;
+    }
+    .floors-container {
+        background: #fff;
+    }
+
+    .floors-container .floor .product-pic {
+        margin-bottom: 1.25rem;
+    }
+
+    .floors-container .floor .product-pic img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .floors-container .floor .product-list {
+        padding: 0 .5rem;
+        overflow: hidden !important;
+    }
+
+    .floors-container .floor .product-list .product-item {
+        float: left !important;
+        width: 7rem !important;
+        margin: 0 .25rem !important;
+        margin-bottom: 1rem;
+    }
+
+    .floors-container .floor .product-list .product-item .pic {
+        margin-bottom: .4rem !important;
+    }
+
+    .floors-container .floor .product-list .product-item .pic img {
+        width: 7rem !important;
+        height: 7rem !important;
+    }
+
+    .floors-container .floor .product-list .product-item .name {
+        margin-bottom: .2rem !important;
+        padding-left: .25rem !important;
+        font-size: .6rem !important;
+        line-height: .7rem !important;
+        color: #333 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+
+    .floors-container .floor .product-list .product-item .price {
+        padding-left: .25rem !important;
+        font-size: .6rem !important;
+        line-height: .65rem !important;
+        color: #333 !important;
+    }
+
+    .floors-container .floor .product-list .product-item .price .RMB {
+        color: #c81c28 !important;
+        margin-left: .2rem !important;
+    }
+
+    .floors-container .floor .more {
+        text-align: center !important;
+        padding-top: .5rem !important;
+        padding-bottom: 2.25rem !important;
+    }
+
+    .floors-container .floor .more a {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        color: #333 !important;
+        line-height: .6rem !important;
+        font-size: .55rem !important;
+    }
+
+    .floors-container .floor .more i {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        width: 1.275rem !important;
+        height: .5rem !important;
+        margin-left: .3rem !important;
+        background: url(img/arrow_right.png) no-repeat center center !important;
+        background-size: 100% !important;
+    }
+    .product-recommend h3 {
+        background: #fff;
+        text-align: center;
+        font-weight: bolder;
+        padding-top: 1.6rem;
+        padding-bottom: .55rem;
+    }
+    .product-recommend h3 i {
+        display: inline-block;
+        vertical-align: middle;
+        width: .9rem;
+        height: .9rem;
+        margin-right: .25rem;
+        background: url() no-repeat center center;
+        background-size: contain;
+    }
+    .product-recommend h3 a {
+        display: inline-block;
+        vertical-align: middle;
+        color: #333;
+        line-height: .75rem;
+        font-size: .7rem;
+    }
+    .product-recommend .nav-contianer {
+        width: 16rem;
+        margin: 0 auto;
+        background: #fff;
+    }
+    .product-recommend .nav-contianer .tag-position {
+        background: #fff;
+        position: relative;
+    }
+    .loading-more {
+        display: none;
+        padding: 1.25rem 0;
+        height: .8rem;
+        line-height: .8rem;
+        text-align: center;
+        font-size: .65rem;
+        color: #666;
+    }
+    .loading-more.loading-end .loading-end-text {
+        position: relative;
+        display: inline-block;
+        height: .8rem;
+        padding: 0 .45rem;
+        color: silver;
+    }
+    .loading-more.loading-end .loading-end-text:before {
+        position: absolute;
+        top: .375rem;
+        left: -2.625rem;
+        content: '';
+        display: block;
+        width: 2.625rem;
+        height: 1px;
+        background-color: #cdcdcd;
+    }
+    .loading-more.loading-end .loading-end-text:after {
+        position: absolute;
+        top: .375rem;
+        right: -2.625rem;
+        content: '';
+        display: block;
+        width: 2.625rem;
+        height: 1px;
+        background-color: #cdcdcd;
+    }
+    .mll-new-footer-q {
+        box-sizing: border-box;
+        width: 100%;
+        padding: .875rem 1.5rem .825rem 1.25rem;
+        background: #414141;
+        overflow: hidden;
+    }
+    .mll-new-footer-q .records {
+        float: left;
+    }
+    .mll-new-footer-q .records .img-btn {
+        margin-bottom: .4rem;
+    }
+
+    .mll-new-footer-q .records .img-btn img {
+        width: 4.15rem;
+        height: 1.1rem;
+        float: left;
+    }
+    .mll-new-footer-q .records .img-btn .btn {
+        width: 3.6rem;
+        padding: .275rem 0;
+        line-height: 1;
+        font-size: .5rem;
+        text-align: center;
+        border: .05rem solid #6d6d6d;
+        border-radius: .15rem;
+        margin: .075rem 0 0 .4rem;
+        float: left;
+    }
+    .mll-new-footer-q .records .img-btn .btn span {
+        color: #fff;
+    }
+    .clearfix:after {
+        clear: both;
+        content: "020";
+        display: block;
+        height: 0;
+        visibility: hidden;
+        line-height: 0;
+        font-size: 1px;
+    }
+    .mll-new-footer-q .records p {
+        color: #aaa;
+        font-size: .45rem;
+        line-height: 1;
+        margin-bottom: .15rem;
+    }
+    .mll-new-footer-q .qrcode {
+        float: right;
+        margin: .075rem 1rem 0 0;
+    }
+    
+
+    .mll-new-footer-q .qrcode .qrcode-img img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: .15rem;
+    }
+    .mll-new-footer-q .qrcode .qrcode-text {
+        color: #aaa;
+        font-size: .55rem;
+        margin-top: .25rem;
+        line-height: 1;
+        text-align: center;
+    }
+    .sidebar-btn {
+        bottom: .75rem;
+    }
+    .sidebar-btn {
+        position: fixed;
+        right: .5rem;
+        z-index: 5;
+    }
+    .call-up.only {
+        position: fixed;
+        bottom: 5.65rem;
+        right: .5rem;
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+    .call-up {
+        display: block;
+        background: rgba(218,0,0,.8) url(img/message.png) no-repeat;
+        background-position: center center;
+        background-size: .9rem .9rem;
+        position: relative;
+        border-radius: 50%;
+    }
+    .sidebar-btn li {
+        position: relative;
+    }
+    .sidebar-btn .chat {
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-bottom: .75rem;
+        border: 1px solid #e5e5e5;
+        border-radius: 50%;
+        background: #fff url(img/message.png) no-repeat center;
+        background-size: .875rem .775rem;
+    }
+    .chat-prompt {
+        position: absolute;
+        top: .1rem;
+        display: none;
+        right: 1.95rem;
+        width: 8.95rem;
+        color: #fffefe;
+        font-size: .65rem;
+        background: url(img/message.png) no-repeat right bottom;
+        background-size: .9rem 1.5rem;
+    }
+    .sidebar-btn .back-top {
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        border: 1px solid #e5e5e5;
+        border-radius: 50%;
+        background: #fff url(img/arrow_up.png) no-repeat center;
+        background-size: 1.55rem 1.35rem;
+        visibility: hidden;
+    }
+</style>
+<body fontsize="12px">
+    <header class="mob-header">
+        <a href="meilele-index.html" class="header-left-icon"></a>
+        <span class="title  PF-Regular">新品首发</span>
+        <div class="search-cart  Right">
+            <a href="javascript:void(0)" class="search"></a>
+            <a href="javascript:void(0)" class="cart"></a>
+        </div>
+    </header>
+    <div class="viewport">
+        <div class="mui-slider">
+            <!--支持循环，需要重复图片节点-->
+            <div class="mui-slider-group mui-slider-loop">
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
+                            src="https://image.meilele.com/images/201808/1534892059344405289.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img
+                            src="https://image.meilele.com/images/201808/1534892059344405289.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img
+                            src="https://image.meilele.com/images/201808/1534892696618210364.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img
+                            src="https://image.meilele.com/images/201808/1534892244961037333.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img
+                            src="https://image.meilele.com/images/201808/1534892011674174577.jpg" /></a></div>
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
+                            src="https://image.meilele.com/images/201808/1534892059344405289.jpg" /></a></div>
+            </div>
+            <div class="mui-slider-indicator mui-text-right">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+            </div>
+        </div>
+        <div class="mob-index-floor mob-index-house-kit">
+            <h3 class="PF-Semibold">
+                <i></i>
+                <a href="detail.html">
+                    NEW新品套系
+                </a>
+            </h3>
+            <div class="house-kit-content">
+                <ul class="house-kit-tab tabs">
+                    <li class="tab-item  active" hidefocus="true">
+                        <span>卧室</span>
+                    </li>
+                    <li class="tab-item  " hidefocus="true">
+                        <span>客厅</span>
+                    </li>
+                    <li class="tab-item  " hidefocus="true">
+                        <span>餐厅</span>
+                    </li>
+                </ul>
+                <div class="container text">
+                    <div class="swiper-container product-content-wrap swiper-container swiper-container-horizontal text">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide product-content swiper-slide-active" style="width: 339px;">
+                                <div class="kit-img">
+                                    <a href="detail.html">
+                                        <img src=" https://image.meilele.com/images/201812/1545947533179176414.jpg">
+                                    </a>
+                                </div>
+                                <div
+                                    class="product-list swiper-container swiper-container-horizontal swiper-container-free-mode">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide swiper-slide-active">
+                                            <a href="detail.html">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img
+                                                            src="https://image.meilele.com/images/201901/1548396202244609258.jpg">
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>¥5199</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide swiper-slide-next">
+                                            <a href="detail.html">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img
+                                                            src=" https://image.meilele.com/images/201903/1553852840637846729.jpg">
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>¥5499</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="detail.html">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img
+                                                            src="https://image.meilele.com/images/201901/1546500272971917961.jpg">
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>¥1220</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="Left  word  PF-Regular">
+                                        <div class="up">
+                                            卧室3件套共计:<span class="RMB">¥</span><span>11918</span>
+                                        </div>
+                                    </div>
+                                    <a href="detail.html">
+                                        <div class="Right">
+                                            <div class="btn">查看详情</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide product-content swiper-slide-next" style="width: 339px;">
+                                <div class="kit-img">
+                                    <a href="detail.html">
+                                        <img class="swiper-lazy swiper-lazy-loaded"
+                                            src=" https://image.meilele.com/images/201812/1545947661718728880.jpg">
+                                    </a>
+                                </div>
+                                <div
+                                    class="product-list swiper-container swiper-container-horizontal swiper-container-free-mode">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide swiper-slide-active">
+                                            <a href="detail.html1">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img class="swiper-lazy swiper-lazy-loaded"
+                                                            src=" https://image.meilele.com/images/201902/1550135975725345911.jpg">
+
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>¥8288</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide swiper-slide-next">
+                                            <a href="detail.html">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img class="swiper-lazy swiper-lazy-loaded"
+                                                            src=" https://image.meilele.com/images/201809/1536210338678671228.jpg ">
+
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>¥2939</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="detail.html">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img class="swiper-lazy swiper-lazy-loaded"
+                                                            src=" https://image.meilele.com/images/201809/1536210338503853654.jpg">
+
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>¥2939</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="Left  word  PF-Regular">
+                                        <div class="up">
+                                            客厅3件套共计:<span class="RMB">¥</span><span>14166</span>
+                                        </div>
+                                    </div>
+                                    <a href="detail.html">
+                                        <div class="Right">
+                                            <div class="btn">查看详情</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide product-content" style="width: 339px;">
+                                <div class="kit-img">
+                                    <a href="detail.html">
+                                        <img src=" https://image.meilele.com/images/201812/1545947737006239484.jpg"
+                                            class="swiper-lazy">
+                                    </a>
+                                </div>
+                                <div
+                                    class="product-list swiper-container swiper-container-horizontal swiper-container-free-mode">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide swiper-slide-active">
+                                            <a href="detail.html">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img class="swiper-lazy swiper-lazy-loaded"
+                                                            src=" https://image.meilele.com/images/201901/1546500272880993338.jpg">
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>¥5399</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <div class="swiper-slide swiper-slide-next">
+                                            <a href="detail.html">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img class="swiper-lazy swiper-lazy-loaded"
+                                                            src="https://image.meilele.com/images/201809/1536210338503853654.jpg">
+
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>¥2939</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="detail.html">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img src="https://image.meilele.com/images/201901/1546500272971917961.jpg"
+                                                            class="swiper-lazy">
+
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>¥1220</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="Left  word  PF-Regular">
+                                        <div class="up">
+                                            餐厅3件套共计:<span class="RMB">¥</span><span>9558</span>
+                                        </div>
+                                    </div>
+                                    <a href="detail.html">
+                                        <div class="Right">
+                                            <div class="btn">查看详情</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-container">
+                <div class="floors-nav">
+                    <div class="swiper-container swiper-container-horizontal swiper-container-free-mode">
+                        <div class=" swiper-wrapper">
+                            <div class="swiper-slide swiper-slide-active">
+                                <div class="nav-item PF-Regular  active ">
+                                    <a href="detail.html">现代洛兰系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-next">
+
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">简美缔卡诺系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">新中式尼斯曼系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">简美槿秀家园系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">现代浅山家居系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">儿童木彩系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">简美贝洛系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">中式圣罗雅系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">现代火烧石系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">简欧卡芙系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">简美西卡图系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">北欧拉普兰系列 </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+
+                                <div class="nav-item PF-Regular ">
+                                    <a href="detail.html">
+                                        欧式卡洛林系列 </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="big-floors-nav">
+                    <div class="swiper-container swiper-container-horizontal swiper-container-free-mode">
+                        <div class=" swiper-wrapper"
+                            style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                            <div class="swiper-slide swiper-slide-active">
+                                <div class="nav-item PF-Regular active">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">现代</div>
+                                            <div class="xl">洛兰系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-next">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">简美</div>
+                                            <div class="xl">缔卡诺系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">新中式</div>
+                                            <div class="xl">尼斯曼系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">简美</div>
+                                            <div class="xl">槿秀家园系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">现代</div>
+                                            <div class="xl">浅山家居系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">儿童</div>
+                                            <div class="xl">木彩系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">简美</div>
+                                            <div class="xl">贝洛系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">中式</div>
+                                            <div class="xl">圣罗雅系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">现代</div>
+                                            <div class="xl">火烧石系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">简欧</div>
+                                            <div class="xl">卡芙系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">简美</div>
+                                            <div class="xl">西卡图系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">北欧</div>
+                                            <div class="xl">拉普兰系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nav-item PF-Regular">
+                                    <div class="border">
+                                        <a href="detail.html;">
+                                            <div class="month">欧式</div>
+                                            <div class="xl">卡洛林系列</div>
+                                            <div class="bar"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floors-container">
+                    <div id="floor0" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img002.mll3321.com/images/201811/1542848859654659705.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540977995341503684.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木多功能储物沙发床</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥5399</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540977995154130487.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="name">时尚布艺高箱床1.5米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4399</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201811/1541125962599919877.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">进口白蜡木电视柜1.6米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2600</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201811/1541125962164981408.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">DIY多变创意茶几</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥1980</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540977995555932105.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">多变酒柜餐桌茶几一体</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4800</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src="https://image.meilele.com/images/201811/1541125962295048367.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">进门鞋柜玄关柜</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4199</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201811/1541125962950032863.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">书柜写字台多功能组合</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2999</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540977995660604913.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">小型家具储物柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2600</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor1" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img004.mll3321.com/images/201811/1542848806055367098.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201811/1541731459817273634.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">进口实木皮布沙发1+2+3</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥21599</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201811/1541731679261391459.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">进口桃花芯木1桌4椅</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥14095</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201811/1541731679174779600.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">全实木皮拉扣床1.8米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥9899</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201811/1541731459391745527.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">四抽实木电视柜1.8米</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4999</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201811/1541731459619742618.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">桃花芯木铜脚茶几</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4699</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201811/1541731679485388322.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">木轨桐木结合床头柜</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥1799</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor2" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img004.mll3321.com/images/201811/1542848771303156418.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539918829553420183.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">布艺沙发1+3+左贵妃</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥7299</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540260460527743174.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">环保耐用1.8米双人床</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2850</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201901/1547689618964371679.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木多层板五门衣柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4755</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539939859672594623.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实用两门鞋柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥1599</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539939859233290064.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">可伸缩梳妆台+妆镜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥1395</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539939859704861608.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">E1级多层实木板单门酒柜</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥1169</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539939859846737994.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">五金缓冲轨三斗柜</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥999</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539939859280503713.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">大理石桌面茶几</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥1799</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor3" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://image.meilele.com/images/201811/1542848727993854855.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539841377439604495.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">流畅线条设计1.8米床</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3399</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539841378377492126.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木框架客厅转角沙发</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥14999</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201903/1552269927756802712.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">做旧简约四门书柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥6299</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539841377582387085.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">油蜡皮床头靠包1.8米床</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4899</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539841377178668183.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">优质橡胶木1.5米餐桌</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3299</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539841377805325751.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">双层简约茶几1.3米</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2499</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539841378585983637.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">百搭清新电视柜2.4米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3499</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201903/1552269927983278927.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实用百搭书桌1.4米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3999</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor4" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img003.mll3321.com/images/201811/1542848669998744233.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201903/1553852840637846729.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">电镀工艺床1.8米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥5499</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538278639978047353.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">格调皮艺转角沙发</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥7728</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1536210338678671228.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">双层大理石面电视柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2939</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src="https://image.meilele.com/images/201809/1536210338410420484.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">黑檀木皮不锈钢两斗柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2515</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201902/1550135975725345911.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木环保皮转角沙发</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥8288</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1536210338503853654.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">大理石电视柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2939</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor5" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img003.mll3321.com/images/201809/1536623038840650795.jpg"" alt="">
+                            </a>
+                        </div>
+                        <div class=" product-list">
+                                <div class="product-item">
+                                    <a href="detail.html">
+                                        <div class="pic">
+                                            <img src=" https://image.meilele.com/images/201809/1536745173836829247.jpg "
+                                                alt="">
+                                        </div>
+                                        <div class="name">儿童储物上下床</div>
+                                        <div class="price">
+                                            <span>尝鲜价:</span>
+                                            <span class="RMB">¥5399</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="product-item">
+                                    <a href="detail.html">
+                                        <div class="pic">
+                                            <img src=" https://image.meilele.com/images/201809/1536745173471577799.jpg "
+                                                alt="">
+                                        </div>
+                                        <div class="name">环保写字台耐用</div>
+                                        <div class="price">
+                                            <span>尝鲜价:</span>
+                                            <span class="RMB">¥3299</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="product-item">
+                                    <a href="detail.html">
+                                        <div class="pic">
+                                            <img src=" https://image.meilele.com/images/201809/1536745174873505490.jpg "
+                                                alt="">
+                                        </div>
+                                        <div class="name">双门储物书柜</div>
+                                        <div class="price">
+                                            <span>尝鲜价:</span>
+                                            <span class="RMB">¥3999</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="product-item">
+                                    <a href="detail.html">
+                                        <div class="pic">
+                                            <img src=" https://image.meilele.com/images/201809/1536745173199524071.jpg "
+                                                alt="">
+                                        </div>
+                                        <div class="name">简约实木床1.2米</div>
+                                        <div class="price">
+                                            <span>尝鲜价:</span>
+                                            <span class="RMB">¥3199</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="product-item">
+                                    <a href="detail.html">
+                                        <div class="pic">
+                                            <img src=" https://image.meilele.com/images/201809/1536745173200370784.jpg "
+                                                alt="">
+                                        </div>
+                                        <div class="name">耐脏储物书桌</div>
+
+                                        <div class="price">
+                                            <span>尝鲜价:</span>
+                                            <span class="RMB">¥4299</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="product-item">
+                                    <a href="detail.html">
+                                        <div class="pic">
+                                            <img src=" https://image.meilele.com/images/201809/1536745174207202348.jpg "
+                                                alt="">
+                                        </div>
+                                        <div class="name">实木储物床1.5米</div>
+
+                                        <div class="price">
+                                            <span>尝鲜价:</span>
+                                            <span class="RMB">¥4499</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="product-item">
+                                    <a href="detail.html">
+                                        <div class="pic">
+                                            <img src=" https://image.meilele.com/images/201809/1536745173161169826.jpg "
+                                                alt="">
+                                        </div>
+                                        <div class="name">稳固实木床1.5米</div>
+                                        <div class="price">
+                                            <span>尝鲜价:</span>
+                                            <span class="RMB">¥4699</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="product-item">
+                                    <a href="detail.html">
+                                        <div class="pic">
+                                            <img src=" https://image.meilele.com/images/201809/1536745174544234678.jpg "
+                                                alt="">
+                                        </div>
+                                        <div class="name">多功能实木书桌</div>
+
+                                        <div class="price">
+                                            <span>尝鲜价:</span>
+                                            <span class="RMB">¥3999</span>
+                                        </div>
+                                    </a>
+                                </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor6" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html ">
+                                <img src="https://img002.mll3321.com/images/201809/1536623169675724101.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534414664961911568.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">美式1.8床+床头柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2118</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534242788414059884.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">四门平开门衣柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3199</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534242787545831325.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">老虎椅两色可选</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2088</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534242787600925688.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">小户型经济电视柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥939</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534242788300136043.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">储物收纳五斗柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥1269</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534242787519117027.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">布艺沙发两色可选</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3199</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor7" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img003.mll3321.com/images/201810/1540339658070717476.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538128903101055299.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">环保全实木榫卯床1.8米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4799</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538128903592534375.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木左转角沙发送4抱枕</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥16999</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538128903205446606.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">榫卯耐腐方茶几</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3599</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538128904246676449.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">可伸缩电视柜2.0-3.8米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥7399</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538184482362980529.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">巴新海棠木茶几1.3米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3499</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538128904737400733.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">耐腐推拉门衣柜1.6米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥13799</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538128903750377952.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">高光易清洁妆台套装</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2399</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538128903551736500.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">巴新海棠木观赏高花架</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥1199</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor8" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img002.mll3321.com/images/201810/1540340037986515455.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1533714931607284149.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">大桌腿火烧石1桌4椅</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3790</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540779999943745670.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">E0级别环保餐边柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥1999</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540779999718813306.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">可延展电视柜1.8-2.7米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2599</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540779999378162255.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">大空间五层三门鞋柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2099</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540779999301772427.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">静音滑轨五斗柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥1899</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540779999493922271.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">火烧石茶几1.3米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2499</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor9" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img002.mll3321.com/images/201809/1537295714630338764.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534145505882458274.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木绒布沙发套装</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥9999</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201908/1565649139634377780.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">亮色环保皮1桌4椅</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥7019</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534833105941809851.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木绒布床1.8米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4699</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534919106222112644.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">四门带抽实木衣柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥7588</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534833105126216125.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">客厅长茶几1.3米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3299</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1535081625252332666.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">五抽电视柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2399</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1537329560599720538.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">烤漆梳妆台组合</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2399</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534833105838908223.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">四门多空间书柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥6299</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor10" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img002.mll3321.com/images/201808/1534981038613110309.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201903/1551404571383875729.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木铜脚真皮沙发套装</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥16788</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534994346696312695.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">桃花芯木描金嵌铜1桌4椅</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥10095</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201908/1565645884113355040.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">桉木铜钉封边床1.8米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4199</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534838808892249292.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">五金大理石茶几组合</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2298</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534838808731541399.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">全拆洗棉麻沙发</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥8399</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201905/1557220772252826980.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木描金茶几</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4299</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201808/1534994346549907285.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">拉丝钛金镂空圆几</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2998</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1536132494765776632.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">钛金钢琴烤漆电视柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3299</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div id="floor11" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img002.mll3321.com/images/201810/1540340275466731274.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540779999833087256.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">白蜡木全实木沙发1+2+3</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥9999</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1539230683644905557.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">可伸缩餐桌套装1桌4椅</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4599</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540779999125356417.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">白蜡木软靠双人床1.8米</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2899</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540779999324671176.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木全开放两门书柜</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3560</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540779999630747073.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">实木木滑轨茶几1.2米</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2899</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201810/1540779999150093294.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">两抽实木电视柜1.8米</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3299</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+
+                    </div>
+                    <div id="floor12" class="floor">
+                        <div class="product-pic">
+                            <a href="detail.html">
+                                <img src="https://img001.mll3321.com/images/201810/1540340644221795561.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-list">
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538026929625566774.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">立体雕花绒布沙发1+2+3</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥16498</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1536027604927927941.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">超强收纳六斗柜描金雕花</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3399</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1538026929195541521.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">杨木雕花宽茶几1.3米</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥3599</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1536027604610940505.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">头层牛皮拉扣床1.8米</div>
+
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥7699</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1536027604285093180.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">两门雕花可拆装鞋柜</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥2799</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="product-item">
+                                <a href="detail.html">
+                                    <div class="pic">
+                                        <img src=" https://image.meilele.com/images/201809/1536027604718734592.jpg "
+                                            alt="">
+                                    </div>
+                                    <div class="name">杨木妆台+妆镜套装</div>
+                                    <div class="price">
+                                        <span>尝鲜价:</span>
+                                        <span class="RMB">¥4299</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="more PF-Regular">
+                            <a href="detail.html">
+                                更多新品
+                            </a>
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-recommend" style="min-height: 986px;">
+            <h3 class="PF-Semibold title">
+                <i></i>
+                <a href="detail.html">
+                        更多新品尝鲜
+                </a>
+            </h3>
+            <div class="nav-contianer">
+                <ul class="nav">                
+                </ul>
+                <div class="tag-position">                             
+                </div>
+            </div>
+            <div style="position:relative;">
+                <div class="mask-render" style="display:none;position:absolute;width:100%;height:100%;min-height:40rem;top:1px;left:0;background:rgba(0,0,0,0.6)"></div>
+                <div class="product-render-contaier">
+                </div>
+            </div>   
+        </div>
+        <div class="loading-more loading-end">
+            <p class="loading-end-text">没有更多了</p>
+        </div>
+        <footer class="mll-new-footer-q">
+            <div class="records">
+                <div class="img-btn clearfix">
+                    <img src="https://static.mll3321.com/wap/common/i/ft-logo-q.png">
+                    <div class="btn"><a href="javascript:void(0)"><span>电脑版</span></a></div>
+                </div>
+            <p><span style="display:inline-block;line-height:150%">深圳象限家居设计有限公司 版权所有 <br>增值电信业务经营许可证:粤B2-20180126</span></p>
+            <p ><img src="https://img002.mll3321.com/images/upload/201912/7c78262978dcd03bcbd07e1bcab76b57.png" style="background:none;width:15px;height:15px;margin-top:2px"> 粤公网安备44030602000294号</p>
+            </div>
+            <div class="qrcode">
+                <div class="qrcode-img"><img src="https://static.mll3321.com/wap/common/i/ft-qrcode.png"></div>
+                <div class="qrcode-text">有赞商城</div>
+            </div>
+        </footer>
+        <ul class="sidebar-btn">
+            <li id="JS_side_call_up" style="display:none;" class="call-up only"></li>
+            <li id="J-customer-service" style="transform-origin: 0px 0px; opacity: 1; transform: scale(1, 1);"><i class="chat"></i><div id="JS_chat_prompt" class="chat-prompt"><span></span></div></li>
+            <li id="JS_to_top" class="back-top" style="visibility: visible; display: block;"></li>
+        </ul>
+    </div>    
+    <script src="js/idangerous.swiper.min.js"></script>
+    <script>
+        $.ajax({
+                type : "GET",
+                url : "http://localhost/php/new_buy.php",
+                dataType : "json", 
+                success : function(data) {
+                    console.log(data)
+                    
+                    for(var i=0; i<3; i++) {
+                        $(".swiper-wrapper").append(`
+                            <div class="swiper-slide product-content swiper-slide-next" style="width: 339px;">
+                                <div class="kit-img">
+                                    <a href="detail.html?type=${data[i].type}>
+                                        <img class="swiper-lazy swiper-lazy-loaded"
+                                            src=" ${data[i].img_url}">
+                                    </a>
+                                </div>
+                                <div
+                                    class="product-list swiper-container swiper-container-horizontal swiper-container-free-mode">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide swiper-slide-active">
+                                            <a href="detail.html?type=${data[i].type}">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img class="swiper-lazy swiper-lazy-loaded"
+                                                            src=" ${data[i].img_url}">
+
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>${data[i].price}</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide swiper-slide-next">
+                                            <a href="detail.html?type=${data[i].type}">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img class="swiper-lazy swiper-lazy-loaded"
+                                                            src=" ${data[i].img_url} ">
+
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>${data[i].price}</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="detail.html?type=${data[i].type}">
+                                                <div class="product-item">
+                                                    <div class="pic">
+                                                        <img class="swiper-lazy swiper-lazy-loaded"
+                                                            src=" ${data[i].img_url}">
+
+                                                    </div>
+                                                    <div class="word PF-Regular">
+                                                        <span class="RMB"></span>
+                                                        <span>${data[i].price}</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="Left  word  PF-Regular">
+                                        <div class="up">
+                                            ${data[i].title}:<span class="RMB">¥</span><span>14166</span>
+                                        </div>
+                                    </div>
+                                    <a href="javascript:void(0)">
+                                        <div class="Right">
+                                            <div class="btn">${data[i].purchase}</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        `)
+                    }
+                }
+            });
+        //获得slider插件对象
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval: 5000//自动轮播周期，若为0则不自动播放，默认为0；
+        });
+        (function () {
+            function change() {
+                var deviceWith = document.documentElement.getBoundingClientRect().width;
+                if (deviceWith > 750) {
+                    deviceWith = 750
+                }
+                document.documentElement.style.fontSize = deviceWith / 16 + "px";
+            }
+            var timer;
+            change();
+            window.addEventListener("resize", function () {
+                clearTimeout(timer)
+                timer = setTimeout(change, 100);
+            }, false)
+        })()
+
+        //tab 切换
+        var tabsSwiper = new Swiper('.swiper-container',{
+        speed:500,
+        onSlideChangeStart: function(){
+            $(".tabs .active").removeClass('active')
+            $(".tabs li").eq(tabsSwiper.activeIndex).addClass('active')  
+        }
+        })
+        $(".tabs li").on('touchstart mousedown',function(e){
+        e.preventDefault()
+        $(".tabs .active").removeClass('active')
+        $(this).addClass('active')
+        tabsSwiper.swipeTo( $(this).index() )
+        })
+        $(".tabs li").click(function(e){
+        e.preventDefault()
+        })
+
+        // 置顶键置顶
+        $(".back-top").click(function(){
+        $("body,html").animate({
+            scrollTop: 0,
+        },"slow");
+        })
+        $(document).scroll(function () {
+            var totop = $(this).scrollTop();
+            if (totop >= 500) {
+                $(".back-top").css("display", "block");
+            } else {
+                $(".back-top").css("display", "none");
+            };
+        });   
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/iconfont.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/my_meilele.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .viewport {
+        width: 100%;
+        margin-top: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .address-list .add-address {
+        background: #5e6b85;
+        text-align: center;
+        padding: 34px 0;
+    }
+    .address-list .add-address i {
+        width: 18px;
+        height: 18px;
+        overflow: hidden;
+        background-size: 0.9rem !important;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozNjAxRjEyRTNBOEUxMUU1QTk1RURFQUI3OEQ3Q0FGRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozNjAxRjEyRjNBOEUxMUU1QTk1RURFQUI3OEQ3Q0FGRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM2MDFGMTJDM0E4RTExRTVBOTVFREVBQjc4RDdDQUZFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjM2MDFGMTJEM0E4RTExRTVBOTVFREVBQjc4RDdDQUZFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+nQR0tQAAAIZJREFUeNrslsEKgCAQRLUOffkeAn9YK2w3NpDokO5BiRl40qX1gYdZl3N2BoiJCllmeTkM2ZlZvxOztA6yijx/9q2DJjdIIAIRiEAEIr8WISZqgdXyVoK1yN0k7VtWea+koZ5m1aWmVzYmYDGCCEQgAhGIQORjjnKn6ClyrxBXlVsGnQIMAMlnn6+HVKXVAAAAAElFTkSuQmCC") center center no-repeat;
+        background-size: cover;
+        margin: 0px 5px 0 0;
+
+    }
+    .address-list .add-address i,
+    .address-list .add-address span {
+        height: 24px;
+        line-height: 24px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .address-list .add-address span {
+        font-size: 17px;
+        color: #fff;
+    }
+    .address-list dl {
+        margin-top: 10px;
+        border-top: solid 1px #d8d8d8;
+        border-bottom: solid 1px #d8d8d8;
+        background: #fff;
+        padding: 15px 0 15px 15px;
+        color: #333;
+    }
+
+    .address-list dl dt {
+        font-size: 15px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -o-box;
+        display: -ms-box;
+        padding-right: 15px;
+    }
+
+    .address-list dl dt div {
+        width: 50%;
+    }
+
+    .address-list dl dt .phone {
+        text-align: right;
+    }
+
+    .address-list dl dd {
+        margin-top: 12px;
+    }
+
+    .address-list dl dd p {
+        padding-right: 15px;
+    }
+
+    .address-list dl dd .tools {
+        height: 35px;
+        margin-top: 12px;
+        border-top: dashed 1px #d7d6da;
+        padding: 15px 15px 15px 0;
+    }
+    .address-list dl dd .tools li {
+        width: 50%;
+        height: 22px;
+        float: left;
+    }
+    .address-list dl dd .tools li:last-child {
+        text-align: right;
+    }
+    .address-list dl dd .tools .edit {
+        margin-right: 25px;
+    }
+
+    .address-list dl dd .tools a {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 14px;
+        height: 22px;
+        line-height: 22px;
+    }
+    .address-list dl dd .tools .edit:before {
+        width: 19px;
+        height: 18px;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAkCAMAAADSK7iXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozREQxQzBBQzNBOTExMUU1QTIyREJCQ0Y1QjQ4RjNFRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozREQxQzBBRDNBOTExMUU1QTIyREJCQ0Y1QjQ4RjNFRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNERDFDMEFBM0E5MTExRTVBMjJEQkJDRjVCNDhGM0VFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNERDFDMEFCM0E5MTExRTVBMjJEQkJDRjVCNDhGM0VFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+3ipOlQAAAMBQTFRFv7+/urq6gYGB+vr6+Pj4qqqqsbGx8fHx7e3t5OTki4uLeHh4dnZ2cnJyoKCgk5OTh4eHcHBwhYWF/f39a2trl5eXZ2dn1NTUbGxs6+vr39/flZWVampq4uLi/v7+6enp0NDQ9PT0x8fHfHx89vb27u7uaGho9/f35ubmb29v8vLydHR0j4+PkZGRysrKzc3NwsLC3Nzc4ODgm5ubpKSk2travb29iIiIf39//Pz8jIyM1tbWs7Oz9fX1ZmZm////Ozq+igAAAEB0Uk5T////////////////////////////////////////////////////////////////////////////////////AMJ7sUQAAAEuSURBVHjanNPXbsMwDAVQJW7cJI6dVrbjPbJ3925N/v9fVXRRoA8WBZRPFHAArUuBxlpch5bArd0PoKtk86M2AKHY9gE4VV6p3hU2ZJfMjjfRXEJeizdYM6rOg2j+WqMIgFGfOUAQlYgCGHYfq3NtbpFnD3ulZgvk2cglJZBn1YSepYc8WzukbGobPTssSQ1aJbVs3v6N1/YSdGxFPwSPfrsAHbM+SGXvyDLrTOpkIcv8kNT4V2lY6bUxWiHPnkj1D8izAanl3wh2sS9SzhB51iN1rJBndzMK/gh51hyV2qfIszQpXIif0cBOTlJMIjSwVF0xuUATy2A2HaGReWHRmVBtkP7PYjMLFJNQ8WoINDIvMN41TO3GoCZa+Gcw1FRNjkBfyEBvYilovr4FGAAdQzgChy3OIgAAAABJRU5ErkJggg==") center center no-repeat;
+        background-size: cover;
+        margin: 1px 5px 0 0;
+    }
+
+    .address-list dl dd .tools a:before {
+        display: inline-block;
+        vertical-align: top;
+        content: '';
+    }
+
+    .address-list dl dd .tools .del:before {
+        width: 18px;
+        height: 20px;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAoCAMAAAChHKjRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozREQxQzBBODNBOTExMUU1QTIyREJCQ0Y1QjQ4RjNFRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozREQxQzBBOTNBOTExMUU1QTIyREJCQ0Y1QjQ4RjNFRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNERDFDMEE2M0E5MTExRTVBMjJEQkJDRjVCNDhGM0VFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNERDFDMEE3M0E5MTExRTVBMjJEQkJDRjVCNDhGM0VFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+VwRb8gAAAMBQTFRFbm5uvb29urq6bGxseHh4hoaGhISEaWlpe3t7ampql5eXkpKS39/fysrKcHBw0tLS5ubmoaGhk5OT6Ojo8PDw+fn5oKCg4ODgt7e3xcXF9fX1q6urrq6u/Pz8m5ub09PT6+vrxMTEf39/vr6+7e3t2tra2dnZd3d38vLyi4uLsrKyo6OjkJCQp6en6enp19fXqKio8fHxn5+f9vb2rKysjIyM5+fnzc3NdHR07Ozsr6+v+vr6g4OD7+/vZmZm////zMAO3wAAAEB0Uk5T////////////////////////////////////////////////////////////////////////////////////AMJ7sUQAAAHBSURBVHjajJTpVsJADIVHCoKllKWAoiDI7or77u37v5VnclNTjuUc8meY9GMmyc3EpWZ3oYOaC+9yH5z9TGLkLE4KoRD1bva7W0dYCDl0bdOFK4SAXBhbu/0g7GH7QWk6xlm6087QlJgiPO6GHhEJNMHNbugGE4F6+N4NHaLHEgTvsq9iZLmPUBXne6B1qnEf49SgJ614taxQBWu/L2Nu0Bz+a7pGRaE6Wt4x5UKohSmXukJ9bFI58NigYzki3aCv0DMa3vGCpUELXPqlIYX2UAkH3tHxxc2gJjp+OUBJoQE+veOcBxJq4NwvnxgoNEbbO9q4MOgi8zUVinj0PW8lNMMtQ4gU+mAmQ5wYdIIhM54o1MMq5yek/1h56di+wVHuBkJ691Hw1+M1UU1jJcQsTimO482JZU2I9UgYrWMOS6sfIVZ2IdIR6uPNlCBEjd5EOkLPmJmmhKj2jG9EoBKurDsIsW+uRDpCA1xbnxFiB16LdITGMkK0Ywmxl0OM/6BIotHeJ8RXURHpCH2gVvygaiIdoS8ExVAg0uno2ZpfZg/6rlw2CR/+Mz/ZTCT0GhfPnPg1P+mSsGBQuVAn8K8AAwAkhTuDPOeYvAAAAABJRU5ErkJggg==") center center no-repeat;
+        background-size: cover;
+        margin-right: 5px;
+    }
+</style>
+<body>
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!-- 顶部导航--始 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-pull-left layout-back" href="javascript:void(0);" id="aaa"></a>
+                <a id="menu" class="mui-action-menu mui-pull-right layout-nav" href="#topPopover"></a>
+                <h1 class="mui-title">收货地址管理</h1>
+                <div id="topPopover" class="mui-popover">
+                    <div class="arrows"></div>
+                    <ul class="nav-list">
+                        <li class="list_index">
+                            <a href="meilele-index.html">
+                                <em></em>
+                                商城首页
+                            </a>
+                        </li>
+                        <li class="list_category">
+                            <a href="sort.html">
+                                <em></em>
+                                分类搜索
+                            </a>
+                        </li>
+                        <li class="list_user">
+                            <a href="my_meilele.html">
+                                <em></em>
+                                个人中心
+                            </a>
+                        </li>
+                        <li class="list_expr">
+                            <a href="experience.html">
+                                <em></em>
+                                体验馆
+                            </a>
+                        </li>
+                        <li class="list_chat">
+                            <a href="javascript:void(0);" class="last">
+                                <em></em>
+                                咨询客服
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <!-- 中间内容 -->
+            <div id="JS_address_list" class="viewport address-list">
+                <div class="add-address"><a href="my_consignee.html"><i></i><span>添加收货地址</span></a></div>
+            </div>
+        </div>
+    </div>
+    <!-- 尾页 -->
+    <div class="menu">
+        <a href="meilele-index.html" class="subMenu text-center">
+            <i class="iconfont icon-men"></i>
+            <div class="menu_name">首页</div>
+        </a>
+        <a href="sort.html" class="subMenu text-center">
+            <i class="iconfont icon-guizi"></i>
+            <div class="menu_name">分类</div>
+        </a>
+        <a href="shopping-car.html" class="subMenu text-center">
+            <i class="iconfont icon-gouwuche"></i>
+            <div class="menu_name">购物车</div>
+        </a>
+        <a href="my_meilele.html" class="subMenu text-center active">
+            <i class="iconfont icon-xiaolian"></i>
+            <div class="menu_name">我的</div>
+        </a>
+    </div>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Public.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost/php/list1.php',
+                dataType: 'JSON',
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        $(".address-list").append(`
+                        <dl id="JS_address_item_1944641" class="rom">
+                            <dt>
+                                <div class="name">${data[i].name}</div>
+                                <div class="phone">${data[i].phone}</div>
+                            </dt>
+                            <dd>
+                                <p class="address">收货地址：${data[i].city}</p>
+                                <ul class="tools">
+                                    <li></li>
+                                    <li>
+                                        <a href="my_consignee.html" class="edit" address-id="1944641">修改</a>
+                                        <a href="#" class="del" data-id="1944641">删除</a>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        `)
+                    }
+                    $(".del").click(function () {
+                        $.ajax({
+                            type: 'GET',
+                            url: 'http://localhost/php/list2.php',
+                            dataType: 'JSON',
+                            data: {
+                                name: $(".name").text()
+                            }
+                        })
+                        $(this).parent().parent().parent().parent().remove()
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+</html>

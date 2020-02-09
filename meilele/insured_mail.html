@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/mui.min.css">
+    <link rel="stylesheet" href="style/iconfont.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/my_meilele.css">
+    <title>Document</title>
+</head>
+<style>
+    .mui-scroll-wrapper {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        bottom: 100rem;
+        overflow: hidden;
+        width: 100%;
+    }
+    .valuation-rules .spread {
+        background: #fff;
+        padding: 20px 10px 10px 10px;
+        margin-top: 2rem;
+    }
+    .valuation-rules .spread li {
+        margin-bottom: 24px;
+    }
+    .valuation-rules .table {
+        padding: 10px;
+        background: #fff;
+        margin-top: 10px;
+        margin-bottom: 3rem;
+        border-right: 1px solid #A8A8A8;
+        border-bottom: 1px solid #A8A8A8;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+    .valuation-rules table td.key {
+        background: #EEEEEE;
+        width: 25%;
+    }
+    .valuation-rules table td {
+        border-left: 1px solid #A8A8A8;
+        border-top: 1px solid #A8A8A8;
+        padding: 10px;
+        text-align: center;
+    }
+    .valuation-rules table img {
+        width: 6.75rem;
+        height: 13.5rem;
+    }
+    img {
+        border: none;
+        vertical-align: middle;
+    }
+</style>
+<body>
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!-- 顶部导航--始 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-pull-left layout-back" href="javascript:void(0);" id="aaa"></a>
+                <h1 class="mui-title">保价规则</h1>
+            </header>
+        </div>
+    </div>
+    <!-- 内容 -->
+    <div class="valuation-rules">
+        <ul class="spread">
+            <li>1.订单中商品出现降价行为，则订单中所有商品在未发货时，您可执行单品保价，按照新价格结算。</li>
+
+            <li>2.执行单品保价后会重新计算订单金额，可能会影响所享受的活动、乐币及金币，请慎重执行。</li>
+
+            <li>3.单品保价仅针对商品单价，不包括赠品，若单品有赠送礼品，请选择活动保价；如果订单中存在有已配货或已发货的商品，该订单不能享受单品保价。</li>
+
+            <li>4.单品保价只能执行现在网站上的最新价格，不能执行以前的价格。</li>
+
+            <li>5.订单未发货前，如现在有更优惠的活动，您可执行活动保价，按照当前活动价格计算，不能保已过期的活动；如果订单中存在有已配货或已发货的商品，该订单不能享受单品保价。</li>
+
+            <li>6.活动保价仅限于未发货订单（以订单中所有商品的发货状态为准），部分发货和已发货订单均不享受活动保价服务。</li>
+
+            <li>7.第三方商家商品暂不享受保价服务。</li>
+
+            <li>8.执行保价意味着订单将重新走备货流程，可能会造成产品配送周期延长。</li>
+
+            <li>9.定制商品、体验馆特卖商品、秒杀商品、团购商品、拍卖商品、第三方配送商品不享受保价服务。</li>
+        </ul>
+        <div class="table">
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td class="key">可以申请保价的订单类型</td>
+                        <td>已经提交，未付款的订单</td>
+                        <td>已经付款，未发货的订单（活动保价）已经付款，未发货的商品（单品保价）</td>
+                    </tr>
+                    <tr>
+                        <td class="key">如何申请保价</td>
+                        <td colspan="2"><img src="https://static.mll3321.com/wap/mpg/return_goods/i/dispute9.jpg"></td>
+                    </tr>
+                    <tr>
+                        <td class="key">保价成功差额如何返还</td>
+                        <td>订单金额发生改变，直接按新的订单金额付款</td>
+                        <td>若订单执行保价后，订单金额小于付款金额，将返还差额部分，若大于付款金额，则需支付余款</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 尾页 -->
+    <div class="menu">
+        <a href="meilele-index.html" class="subMenu text-center">
+            <i class="iconfont icon-men"></i>
+            <div class="menu_name">首页</div>
+        </a>
+        <a href="sort.html" class="subMenu text-center">
+            <i class="iconfont icon-guizi"></i>
+            <div class="menu_name">分类</div>
+        </a>
+        <a href="shopping-car.html" class="subMenu text-center">
+            <i class="iconfont icon-gouwuche"></i>
+            <div class="menu_name">购物车</div>
+        </a>
+        <a href="my_meilele.html" class="subMenu text-center active">
+            <i class="iconfont icon-xiaolian"></i>
+            <div class="menu_name">我的</div>
+        </a>
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Public.js"></script>
+</body>
+</html>
